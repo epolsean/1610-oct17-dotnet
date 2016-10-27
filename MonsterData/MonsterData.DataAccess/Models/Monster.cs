@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace MonsterData.DataAccess.Models
 {
-    public class Title
+    public class Monster
     {
-        public int TitlerId { get; set; }
+        public int MonsterId { get; set; }
+        public int GenderId { get; set; }
+        public int TitleId { get; set; }
+        public int TypeId { get; set; }
         public string Name { get; set; }
+        public string PicturePath { get; set; }
         public bool Active { get; set; }
     }
 }

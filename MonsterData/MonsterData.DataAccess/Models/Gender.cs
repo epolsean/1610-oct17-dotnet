@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonsterData.DataAccess.Models
 {
-    class Gender
+    public class Gender
     {
         public int GenderId { get; set; }
         public string Name { get; set; }
