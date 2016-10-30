@@ -1,4 +1,4 @@
-﻿using MonsterData.DataAccess.Models;
+﻿using Models = MonsterData.DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -24,17 +24,17 @@ namespace MonsterData.DataAccess
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Gender> GetGenders()
+        public List<Models.Gender> GetGenders()
         {
 
             try
             {
                 var ds = GetDataDisconnected("SELECT * FROM Monster.Gender;");
-                var genders = new List<Gender>();
+                var genders = new List<Models.Gender>();
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    genders.Add(new Gender()
+                    genders.Add(new Models.Gender()
                     {
                         GenderId = int.Parse(row[0].ToString()),
                         Name = row[1].ToString(),
@@ -52,20 +52,44 @@ namespace MonsterData.DataAccess
             }
         }
 
+        public Models.Gender GetLatestGender()
+        {
+
+            try
+            {
+                var ds = GetDataDisconnected("SELECT TOP 1 * FROM Monster.Gender AS mg ORDER BY mg.GenderId DESC;");
+                DataRow row = ds.Tables[0].Rows[0];
+                Models.Gender latestGender = new Models.Gender()
+                {
+                    GenderId = int.Parse(row[0].ToString()),
+                    Name = row[1].ToString(),
+                    Active = bool.Parse(row[2].ToString())
+                };
+
+                return latestGender;
+            }
+
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<MonsterType> GetMonsterTypes()
+        public List<Models.MonsterType> GetMonsterTypes()
         {
             try
             {
                 var ds = GetDataDisconnected("SELECT * FROM Monster.MonsterType;");
-                var monsterTypes = new List<MonsterType>();
+                var monsterTypes = new List<Models.MonsterType>();
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    monsterTypes.Add(new MonsterType()
+                    monsterTypes.Add(new Models.MonsterType()
                     {
                         MonsterTypeId = int.Parse(row[0].ToString()),
                         Name = row[1].ToString(),
@@ -87,18 +111,18 @@ namespace MonsterData.DataAccess
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Title> GetTitles()
+        public List<Models.Title> GetTitles()
         {
             try
             {
                 var ds = GetDataDisconnected("SELECT * FROM Monster.Title;");
-                var titles = new List<Title>();
+                var titles = new List<Models.Title>();
 
                 foreach (DataRow row in ds.Tables[0].Rows)
                 {
-                    titles.Add(new Title()
+                    titles.Add(new Models.Title()
                     {
-                        TitlerId = int.Parse(row[0].ToString()),
+                        TitleId = int.Parse(row[0].ToString()),
                         Name = row[1].ToString(),
                         Active = bool.Parse(row[2].ToString())
                     });

@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3DDC3C00-5615-4CC7-AACD-20A891385DEA}</ProjectGuid>
+    <ProjectGuid>{3B0F851D-086B-46E5-AAE8-E9C38F393BFD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MonsterData.Test</RootNamespace>
-    <AssemblyName>MonsterData.Test</AssemblyName>
+    <RootNamespace>RegistrationData.Test</RootNamespace>
+    <AssemblyName>RegistrationData.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -41,7 +41,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -69,24 +68,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdoDataDeleteTests.cs" />
-    <Compile Include="AdoDataInsertTests.cs" />
-    <Compile Include="AdoDataMSTests.cs" />
-    <Compile Include="AdoDataTests.cs" />
-    <Compile Include="AdoDataUpdateTests.cs" />
     <Compile Include="EFDataTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MonsterData.DataAccess\MonsterData.DataAccess.csproj">
-      <Project>{45938255-D0D3-4B35-B385-3A6A1CD3E935}</Project>
-      <Name>MonsterData.DataAccess</Name>
+    <ProjectReference Include="..\RegistrationData.DataAccess\RegistrationData.DataAccess.csproj">
+      <Project>{4142bb77-63f8-487f-9b3a-5c4ca67ee1a9}</Project>
+      <Name>RegistrationData.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

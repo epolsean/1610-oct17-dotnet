@@ -8,7 +8,7 @@ namespace MonsterData.DataAccess.Models
 {
     public class Title
     {
-        public int TitlerId { get; set; }
+        public int TitleId { get; set; }
         public string Name { get; set; }
         public bool Active { get; set; }
     }

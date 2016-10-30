@@ -11,39 +11,39 @@ namespace MonsterData.Test
     public partial class AdoDataTests
     {
         [Fact]
-        public void Test_GetGenders()
+        public void Test_DeleteGender()
         {
             var data = new AdoData();
-            var actual = data.GetGenders();
-            
-            Assert.NotNull(actual.Count);
+            var actual = data.DeleteGender(gender);
+
+            Assert.True(actual);
         }
 
         [Fact]
-        public void Test_GetLatestGender()
+        public void Test_DeleteMonsterType()
         {
             var data = new AdoData();
-            var actual = data.GetLatestGender();
+            var actual = data.DeleteMonsterType(monsterType);
 
-            Assert.NotNull(actual);
+            Assert.True(actual);
         }
 
         [Fact]
-        public void Test_GetMonsterTypes()
+        public void Test_DeleteTitle()
         {
             var data = new AdoData();
-            var actual = data.GetMonsterTypes();
+            var actual = data.DeleteTitle(title);
 
-            Assert.NotNull(actual.Count);
+            Assert.True(actual);
         }
 
         [Fact]
-        public void Test_GetTitles()
+        public void Test_DeleteMonster()
         {
             var data = new AdoData();
-            var actual = data.GetTitles();
-            
-            Assert.NotNull(actual.Count);
+            var actual = data.DeleteMonster(monster);
+
+            Assert.True(actual);
         }
     }
 }
