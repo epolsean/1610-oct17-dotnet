@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MonsterData.DataClient.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace MonsterData.DataClient
@@ -11,8 +13,14 @@ namespace MonsterData.DataClient
     public interface IMonsterService
     {
         [OperationContract]
-        string DoWork();
+        List<GenderDAO> GetGenders();
 
-        //void Menu();
+        [OperationContract]
+        List<MonsterTypeDAO> GetMonsterTypes();
+
+        [OperationContract]
+        [WebInvoke]
+        List<TitleDAO> GetTitles();
+
     }
 }

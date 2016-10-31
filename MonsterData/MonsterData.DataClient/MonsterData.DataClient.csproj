@@ -41,6 +41,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -65,22 +69,36 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenderAutoMapper.cs" />
+    <Compile Include="GenderMapper.cs" />
     <Compile Include="IMonsterService.cs" />
+    <Compile Include="Models\GenderDAO.cs" />
+    <Compile Include="Models\MonsterTypeDAO.cs" />
+    <Compile Include="Models\TitleDAO.cs" />
     <Compile Include="MonsterService.svc.cs">
       <DependentUpon>MonsterService.svc</DependentUpon>
     </Compile>
+    <Compile Include="MonsterTypeMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TitleMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MonsterData.DataAccess\MonsterData.DataAccess.csproj">
+      <Project>{45938255-d0d3-4b35-b385-3a6a1cd3e935}</Project>
+      <Name>MonsterData.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
