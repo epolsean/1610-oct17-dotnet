@@ -1,5 +1,4 @@
-﻿using MonsterData.DataClient.Models;
-using MonsterWeb.Logic.MonsterServiceReference;
+﻿using MonsterWeb.Logic.MonsterServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
