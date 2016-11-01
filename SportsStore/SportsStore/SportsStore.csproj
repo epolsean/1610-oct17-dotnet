@@ -98,12 +98,14 @@
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Pages\Listing.aspx.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Listing.aspx.designer.cs">
       <DependentUpon>Listing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Store.Master.cs">
       <DependentUpon>Store.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Store.Master.designer.cs">
       <DependentUpon>Store.Master</DependentUpon>

@@ -19,18 +19,18 @@ namespace MonsterWeb.Tests
         }
 
         [Fact]
-        public void Test_GetGenders()
+        public void Test_GetMonsterTypes()
         {
             var service = new DataService();
-            var actual = service.GetGenders();
+            var actual = service.GetMonsterTypes();
             Assert.NotNull(actual);
         }
 
         [Fact]
-        public void Test_GetGenders()
+        public void Test_GetTitles()
         {
             var service = new DataService();
-            var actual = service.GetGenders();
+            var actual = service.GetTitles();
             Assert.NotNull(actual);
         }
     }
