@@ -69,43 +69,42 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
-    <Content Include="packages.config" />
-    <None Include="Service References\MonsterServerReference\MonsterService.wsdl" />
-    <None Include="Service References\MonsterServerReference\MonsterService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MonsterServerReference\MonsterService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MonsterServerReference\MonsterService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Service References\MonsterServerReference\MonsterWeb.Client.MonsterServerReference.GenderDAO.datasource">
+    <None Include="Service References\MonsterServiceReference\MonsterService.disco" />
+    <None Include="Service References\MonsterServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\MonsterServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.GenderDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\MonsterServerReference\MonsterWeb.Client.MonsterServerReference.MonsterTypeDAO.datasource">
+    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.MonsterTypeDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\MonsterServerReference\MonsterWeb.Client.MonsterServerReference.TitleDAO.datasource">
+    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.TitleDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="Service References\MonsterServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <Content Include="web.config" />
+    <None Include="Service References\MonsterServiceReference\MonsterService.wsdl" />
+    <None Include="Service References\MonsterServiceReference\MonsterService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <None Include="Service References\MonsterServerReference\MonsterService.disco" />
-    <None Include="Service References\MonsterServerReference\configuration91.svcinfo" />
-    <None Include="Service References\MonsterServerReference\configuration.svcinfo" />
-    <None Include="Service References\MonsterServerReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="default.aspx.cs">
@@ -119,7 +118,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\MonsterServerReference\Reference.cs">
+    <Compile Include="Service References\MonsterServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -139,7 +138,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\MonsterServerReference\" />
+    <WCFMetadataStorage Include="Service References\MonsterServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

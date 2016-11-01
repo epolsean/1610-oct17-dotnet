@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MonsterWeb.Client.MonsterServerReference {
+namespace MonsterWeb.Tests.MonsterServiceReference {
     using System.Runtime.Serialization;
     using System;
     
@@ -197,35 +197,35 @@ namespace MonsterWeb.Client.MonsterServerReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MonsterServerReference.IMonsterService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MonsterServiceReference.IMonsterService")]
     public interface IMonsterService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetGenders", ReplyAction="http://tempuri.org/IMonsterService/GetGendersResponse")]
-        MonsterWeb.Client.MonsterServerReference.GenderDAO[] GetGenders();
+        MonsterWeb.Tests.MonsterServiceReference.GenderDAO[] GetGenders();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetGenders", ReplyAction="http://tempuri.org/IMonsterService/GetGendersResponse")]
-        System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.GenderDAO[]> GetGendersAsync();
+        System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.GenderDAO[]> GetGendersAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetMonsterTypes", ReplyAction="http://tempuri.org/IMonsterService/GetMonsterTypesResponse")]
-        MonsterWeb.Client.MonsterServerReference.MonsterTypeDAO[] GetMonsterTypes();
+        MonsterWeb.Tests.MonsterServiceReference.MonsterTypeDAO[] GetMonsterTypes();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetMonsterTypes", ReplyAction="http://tempuri.org/IMonsterService/GetMonsterTypesResponse")]
-        System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.MonsterTypeDAO[]> GetMonsterTypesAsync();
+        System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.MonsterTypeDAO[]> GetMonsterTypesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetTitles", ReplyAction="http://tempuri.org/IMonsterService/GetTitlesResponse")]
-        MonsterWeb.Client.MonsterServerReference.TitleDAO[] GetTitles();
+        MonsterWeb.Tests.MonsterServiceReference.TitleDAO[] GetTitles();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetTitles", ReplyAction="http://tempuri.org/IMonsterService/GetTitlesResponse")]
-        System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.TitleDAO[]> GetTitlesAsync();
+        System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.TitleDAO[]> GetTitlesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMonsterServiceChannel : MonsterWeb.Client.MonsterServerReference.IMonsterService, System.ServiceModel.IClientChannel {
+    public interface IMonsterServiceChannel : MonsterWeb.Tests.MonsterServiceReference.IMonsterService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MonsterServiceClient : System.ServiceModel.ClientBase<MonsterWeb.Client.MonsterServerReference.IMonsterService>, MonsterWeb.Client.MonsterServerReference.IMonsterService {
+    public partial class MonsterServiceClient : System.ServiceModel.ClientBase<MonsterWeb.Tests.MonsterServiceReference.IMonsterService>, MonsterWeb.Tests.MonsterServiceReference.IMonsterService {
         
         public MonsterServiceClient() {
         }
@@ -246,27 +246,27 @@ namespace MonsterWeb.Client.MonsterServerReference {
                 base(binding, remoteAddress) {
         }
         
-        public MonsterWeb.Client.MonsterServerReference.GenderDAO[] GetGenders() {
+        public MonsterWeb.Tests.MonsterServiceReference.GenderDAO[] GetGenders() {
             return base.Channel.GetGenders();
         }
         
-        public System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.GenderDAO[]> GetGendersAsync() {
+        public System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.GenderDAO[]> GetGendersAsync() {
             return base.Channel.GetGendersAsync();
         }
         
-        public MonsterWeb.Client.MonsterServerReference.MonsterTypeDAO[] GetMonsterTypes() {
+        public MonsterWeb.Tests.MonsterServiceReference.MonsterTypeDAO[] GetMonsterTypes() {
             return base.Channel.GetMonsterTypes();
         }
         
-        public System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.MonsterTypeDAO[]> GetMonsterTypesAsync() {
+        public System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.MonsterTypeDAO[]> GetMonsterTypesAsync() {
             return base.Channel.GetMonsterTypesAsync();
         }
         
-        public MonsterWeb.Client.MonsterServerReference.TitleDAO[] GetTitles() {
+        public MonsterWeb.Tests.MonsterServiceReference.TitleDAO[] GetTitles() {
             return base.Channel.GetTitles();
         }
         
-        public System.Threading.Tasks.Task<MonsterWeb.Client.MonsterServerReference.TitleDAO[]> GetTitlesAsync() {
+        public System.Threading.Tasks.Task<MonsterWeb.Tests.MonsterServiceReference.TitleDAO[]> GetTitlesAsync() {
             return base.Channel.GetTitlesAsync();
         }
     }
