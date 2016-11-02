@@ -60,14 +60,5 @@ namespace MonsterData.Test
 
             Assert.True(actual);
         }
-
-        [Theory(gender = new Models.Gender() { Name = "blah", Active = true })]
-        public void Theory_InsertGender(Models.Gender gender)
-        {
-            var data = new AdoData();
-            var actual = data.InsertGender(gender);
-
-            Assert.True(actual);
-        }
     }
 }

@@ -13,6 +13,7 @@ namespace MonsterData.DataClient
     public class MonsterService : IMonsterService
     {
         private AdoData data = new AdoData();
+        private EFData ef = new EFData();
 
         public List<GenderDAO> GetGenders()
         {
@@ -48,6 +49,16 @@ namespace MonsterData.DataClient
             }
 
             return t;
+        }
+
+        public bool InsertMonster(MonsterDAO monster)
+        {
+            var m = new Monster();
+
+            m.Name = monster.Name;
+            m.GenderId = monster.Gender.Id;
+
+            return ef.InsertMonster(m);
         }
     }
 }

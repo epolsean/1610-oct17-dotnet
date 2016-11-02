@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -73,6 +73,7 @@
     <Compile Include="GenderMapper.cs" />
     <Compile Include="IMonsterService.cs" />
     <Compile Include="Models\GenderDAO.cs" />
+    <Compile Include="Models\MonsterDAO.cs" />
     <Compile Include="Models\MonsterTypeDAO.cs" />
     <Compile Include="Models\TitleDAO.cs" />
     <Compile Include="MonsterService.svc.cs">
@@ -115,7 +116,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53042</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53042/</IISUrl>
+          <IISUrl>http://localhost/monsterdataservices/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
