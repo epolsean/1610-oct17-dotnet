@@ -29,10 +29,9 @@ namespace MonsterWeb.Logic
         public bool InsertMonster(string name, string gender)
         {
             var gen = msc.GetGenders().FirstOrDefault(g => g.Name == gender);
-            var mon = new { Name = name, Gender = gen };
+            var mon = new MonsterDAO() { Name = name, Gender = gen };
 
-            //return msc.InsertMonster(mon);
-            return true;
+            return msc.InsertMonster(mon);
         }
     }
 }

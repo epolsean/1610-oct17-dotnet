@@ -17,6 +17,16 @@ namespace MonsterWeb.Client
 
         }
 
+        private void LoadGenders()
+        {
+            MonsterGender_List.Items.Clear();
+
+            foreach (var gender in data.GetGenders())
+            {
+                MonsterGender_List.Items.Add(new ListItem() { Text = gender.Name, Value = gender.Id.ToString() });
+            }
+        }
+
         private bool InsertValidated()
         {
             if(string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedValue))
