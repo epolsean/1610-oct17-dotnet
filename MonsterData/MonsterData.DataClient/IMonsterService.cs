@@ -22,6 +22,6 @@ namespace MonsterData.DataClient
         List<TitleDAO> GetTitles();
 
         [OperationContract]
-        bool InsertMonster();
+        bool InsertMonster(MonsterDAO monster);
     }
 }
