@@ -76,6 +76,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="app.config" />
     <None Include="Service References\MonsterServiceReference\MonsterService.wsdl" />
     <None Include="Service References\MonsterServiceReference\MonsterService.xsd">
@@ -96,9 +99,6 @@
     <None Include="Service References\MonsterServiceReference\MonsterWeb.Tests.MonsterServiceReference.TitleDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MonsterServiceReference\" />

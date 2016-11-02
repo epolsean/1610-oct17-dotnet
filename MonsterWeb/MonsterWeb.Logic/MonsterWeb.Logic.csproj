@@ -68,6 +68,15 @@
     <None Include="Service References\MonsterServiceReference\MonsterService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\MonsterServiceReference\MonsterWeb.Logic.MonsterServiceReference.GenderDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterWeb.Logic.MonsterServiceReference.MonsterTypeDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterWeb.Logic.MonsterServiceReference.TitleDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MonsterServiceReference\" />

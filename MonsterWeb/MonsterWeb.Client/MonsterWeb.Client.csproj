@@ -69,9 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
-    <None Include="Service References\MonsterServiceReference\MonsterService.disco" />
-    <None Include="Service References\MonsterServiceReference\configuration91.svcinfo" />
-    <None Include="Service References\MonsterServiceReference\configuration.svcinfo" />
     <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.GenderDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -85,17 +82,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="web.config" />
+    <None Include="Service References\MonsterServiceReference\configuration.svcinfo" />
+    <None Include="Service References\MonsterServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\MonsterServiceReference\MonsterService.disco" />
     <None Include="Service References\MonsterServiceReference\MonsterService.wsdl" />
-    <None Include="Service References\MonsterServiceReference\MonsterService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MonsterServiceReference\MonsterService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\MonsterServiceReference\MonsterService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -136,6 +126,18 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\MonsterServiceReference\MonsterService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MonsterServiceReference\MonsterService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MonsterServiceReference\" />
