@@ -37,4 +37,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertMonster">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MonsterData.DataClient.Models" minOccurs="0" name="monster" nillable="true" type="q4:MonsterDAO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMonsterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertMonsterResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

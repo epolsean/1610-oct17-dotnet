@@ -9,7 +9,86 @@
 //------------------------------------------------------------------------------
 
 namespace MonsterWeb.Tests.MonsterServiceReference {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MonsterDAO", Namespace="http://schemas.datacontract.org/2004/07/MonsterData.DataClient.Models")]
+    [System.SerializableAttribute()]
+    public partial class MonsterDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MonsterWeb.Logic.MonsterServiceReference.GenderDAO GenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MonsterWeb.Logic.MonsterServiceReference.GenderDAO Gender {
+            get {
+                return this.GenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="MonsterServiceReference.IMonsterService")]
@@ -32,6 +111,12 @@ namespace MonsterWeb.Tests.MonsterServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/GetTitles", ReplyAction="http://tempuri.org/IMonsterService/GetTitlesResponse")]
         System.Threading.Tasks.Task<MonsterWeb.Logic.MonsterServiceReference.TitleDAO[]> GetTitlesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/InsertMonster", ReplyAction="http://tempuri.org/IMonsterService/InsertMonsterResponse")]
+        bool InsertMonster(MonsterWeb.Tests.MonsterServiceReference.MonsterDAO monster);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMonsterService/InsertMonster", ReplyAction="http://tempuri.org/IMonsterService/InsertMonsterResponse")]
+        System.Threading.Tasks.Task<bool> InsertMonsterAsync(MonsterWeb.Tests.MonsterServiceReference.MonsterDAO monster);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +168,14 @@ namespace MonsterWeb.Tests.MonsterServiceReference {
         
         public System.Threading.Tasks.Task<MonsterWeb.Logic.MonsterServiceReference.TitleDAO[]> GetTitlesAsync() {
             return base.Channel.GetTitlesAsync();
+        }
+        
+        public bool InsertMonster(MonsterWeb.Tests.MonsterServiceReference.MonsterDAO monster) {
+            return base.Channel.InsertMonster(monster);
+        }
+        
+        public System.Threading.Tasks.Task<bool> InsertMonsterAsync(MonsterWeb.Tests.MonsterServiceReference.MonsterDAO monster) {
+            return base.Channel.InsertMonsterAsync(monster);
         }
     }
 }

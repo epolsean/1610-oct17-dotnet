@@ -9,13 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label runat="server" ID="MonsterName"></asp:Label>
+            <asp:Label runat="server" ID="MonsterName">Name</asp:Label>
             <asp:TextBox runat="server" ID="MonsterName_Text"></asp:TextBox>
 
-            <asp:Label runat="server" ID="MonsterGender"></asp:Label>
+            <asp:Label runat="server" ID="MonsterGender">Gender</asp:Label>
             <asp:DropDownList runat="server" ID="MonsterGender_List"></asp:DropDownList>
 
-            <asp:Button runat="server" ID="MonsterSubmit" OnClick="MonsterSubmit_Click"/>
+            <asp:Button runat="server" ID="MonsterSubmit" OnClick="MonsterSubmit_Click" Text="Submit"/>
         </div>
     </form>
 </body>

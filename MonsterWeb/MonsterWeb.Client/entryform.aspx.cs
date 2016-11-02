@@ -14,7 +14,10 @@ namespace MonsterWeb.Client
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                LoadGenders();
+            }
         }
 
         private void LoadGenders()
@@ -29,23 +32,21 @@ namespace MonsterWeb.Client
 
         private bool InsertValidated()
         {
-            if(string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedValue))
+            if(string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedItem.Value))
             {
                 return false;
             }
 
-            return data.InsertMonster(MonsterName_Text.Text, MonsterGender_List.SelectedValue);
+            return data.InsertMonster(MonsterName_Text.Text, MonsterGender_List.SelectedItem.Text);
         }
 
         protected void MonsterSubmit_Click(object sender, EventArgs e)
         {
-            //if (InsertValidated())
-            //{
-            //    MonsterName_Text.Text = string.Empty;
-            //    MonsterGender_List.SelectedIndex = 0;
-            //}
-            MonsterName_Text.Text = "Server Found";
-
+            if (InsertValidated())
+            {
+                MonsterName_Text.Text = string.Empty;
+                MonsterGender_List.SelectedIndex = 0;
+            }
         }
     }
 }
