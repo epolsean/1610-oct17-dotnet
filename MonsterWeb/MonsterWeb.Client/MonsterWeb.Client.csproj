@@ -69,15 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.aspx" />
-    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.GenderDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.MonsterTypeDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\MonsterServiceReference\MonsterWeb.Client.MonsterServiceReference.TitleDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <Content Include="entryform.aspx" />
+    <Content Include="Properties\DataSources\MonsterWeb.Logic.MonsterServiceReference.GenderDAO.datasource" />
+    <Content Include="Properties\DataSources\MonsterWeb.Logic.MonsterServiceReference.MonsterTypeDAO.datasource" />
+    <Content Include="Properties\DataSources\MonsterWeb.Logic.MonsterServiceReference.TitleDAO.datasource" />
     <None Include="Service References\MonsterServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -86,6 +81,7 @@
     <None Include="Service References\MonsterServiceReference\configuration91.svcinfo" />
     <None Include="Service References\MonsterServiceReference\MonsterService.disco" />
     <None Include="Service References\MonsterServiceReference\MonsterService.wsdl" />
+    <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -103,6 +99,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="entryform.aspx.cs">
+      <DependentUpon>entryform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="entryform.aspx.designer.cs">
+      <DependentUpon>entryform.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -137,7 +140,6 @@
     <None Include="Service References\MonsterServiceReference\MonsterService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\MonsterServiceReference\" />
