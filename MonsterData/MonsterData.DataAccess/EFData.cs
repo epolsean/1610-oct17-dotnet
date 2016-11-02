@@ -88,7 +88,7 @@ namespace MonsterData.DataAccess
         public bool InsertMonster(Monster monster)
         {
             db.Monsters.Add(monster);
-            return db.SaveChanges() > 0;
+            return db.SaveChanges() == 1;
         }
         #endregion
 
