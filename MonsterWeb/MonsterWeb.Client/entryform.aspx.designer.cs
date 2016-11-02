@@ -58,6 +58,42 @@ namespace MonsterWeb.Client {
         protected global::System.Web.UI.WebControls.DropDownList MonsterGender_List;
         
         /// <summary>
+        /// MonsterType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MonsterType;
+        
+        /// <summary>
+        /// MonsterType_List control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList MonsterType_List;
+        
+        /// <summary>
+        /// MonsterTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MonsterTitle;
+        
+        /// <summary>
+        /// MonsterTitle_List control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList MonsterTitle_List;
+        
+        /// <summary>
         /// MonsterSubmit control.
         /// </summary>
         /// <remarks>
@@ -65,5 +101,23 @@ namespace MonsterWeb.Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button MonsterSubmit;
+        
+        /// <summary>
+        /// Monster control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Monster;
+        
+        /// <summary>
+        /// Monster_Table control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Monster_Table;
     }
 }

@@ -17,6 +17,8 @@ namespace MonsterWeb.Client
             if(!IsPostBack)
             {
                 LoadGenders();
+                LoadMonsterTypes();
+                LoadTitles();
             }
         }
 
@@ -30,6 +32,26 @@ namespace MonsterWeb.Client
             }
         }
 
+        private void LoadMonsterTypes()
+        {
+            MonsterType_List.Items.Clear();
+
+            foreach (var monsterType in data.GetMonsterTypes())
+            {
+                MonsterType_List.Items.Add(new ListItem() { Text = monsterType.Name, Value = monsterType.Id.ToString() });
+            }
+        }
+
+        private void LoadTitles()
+        {
+            MonsterTitle_List.Items.Clear();
+
+            foreach (var title in data.GetTitles())
+            {
+                MonsterTitle_List.Items.Add(new ListItem() { Text = title.Name, Value = title.Id.ToString() });
+            }
+        }
+
         private bool InsertValidated()
         {
             if(string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedItem.Value))
@@ -37,7 +59,7 @@ namespace MonsterWeb.Client
                 return false;
             }
 
-            return data.InsertMonster(MonsterName_Text.Text, MonsterGender_List.SelectedItem.Text);
+            return data.InsertMonster(MonsterName_Text.Text, MonsterGender_List.SelectedItem.Text, MonsterType_List.SelectedItem.Text, MonsterTitle_List.SelectedItem.Text);
         }
 
         protected void MonsterSubmit_Click(object sender, EventArgs e)
@@ -46,6 +68,8 @@ namespace MonsterWeb.Client
             {
                 MonsterName_Text.Text = string.Empty;
                 MonsterGender_List.SelectedIndex = 0;
+                MonsterType_List.SelectedIndex = 0;
+                MonsterTitle_List.SelectedIndex = 0;
             }
         }
     }

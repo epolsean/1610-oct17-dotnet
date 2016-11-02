@@ -43,7 +43,9 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Gender" nillable="true" type="tns:GenderDAO" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MonsterType" nillable="true" type="tns:MonsterTypeDAO" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="tns:TitleDAO" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MonsterDAO" nillable="true" type="tns:MonsterDAO" />

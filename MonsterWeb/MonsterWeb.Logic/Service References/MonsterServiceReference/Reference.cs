@@ -212,7 +212,13 @@ namespace MonsterWeb.Logic.MonsterServiceReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MonsterWeb.Logic.MonsterServiceReference.MonsterTypeDAO MonsterTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MonsterWeb.Logic.MonsterServiceReference.TitleDAO TitleField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -251,6 +257,19 @@ namespace MonsterWeb.Logic.MonsterServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public MonsterWeb.Logic.MonsterServiceReference.MonsterTypeDAO MonsterType {
+            get {
+                return this.MonsterTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MonsterTypeField, value) != true)) {
+                    this.MonsterTypeField = value;
+                    this.RaisePropertyChanged("MonsterType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Name {
             get {
                 return this.NameField;
@@ -259,6 +278,19 @@ namespace MonsterWeb.Logic.MonsterServiceReference {
                 if ((object.ReferenceEquals(this.NameField, value) != true)) {
                     this.NameField = value;
                     this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MonsterWeb.Logic.MonsterServiceReference.TitleDAO Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
                 }
             }
         }

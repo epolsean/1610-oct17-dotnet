@@ -26,10 +26,12 @@ namespace MonsterWeb.Logic
             return msc.GetTitles().ToList();
         }
 
-        public bool InsertMonster(string name, string gender)
+        public bool InsertMonster(string name, string gender, string monsterType, string title)
         {
             var gen = msc.GetGenders().FirstOrDefault(g => g.Name == gender);
-            var mon = new MonsterDAO() { Name = name, Gender = gen };
+            var typ = msc.GetMonsterTypes().FirstOrDefault(t => t.Name == monsterType);
+            var tit = msc.GetTitles().FirstOrDefault(t => t.Name == title);
+            var mon = new MonsterDAO() { Name = name, Gender = gen, MonsterType = typ, Title = tit };
 
             return msc.InsertMonster(mon);
         }

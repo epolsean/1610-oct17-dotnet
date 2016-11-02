@@ -19,8 +19,9 @@ namespace MonsterData.DataClient
         List<MonsterTypeDAO> GetMonsterTypes();
 
         [OperationContract]
-        [WebInvoke]
         List<TitleDAO> GetTitles();
 
+        [OperationContract]
+        bool InsertMonster(MonsterDAO monster);
     }
 }
