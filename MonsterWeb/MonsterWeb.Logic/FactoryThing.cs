@@ -11,7 +11,8 @@ namespace MonsterWeb.Logic
     {
         public T Create()
         {
-            return new T().Create<T>();
+            var o = new T();
+            return o.Create<T>();
         }
     }
 }

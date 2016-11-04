@@ -13,13 +13,15 @@ namespace MonsterWeb.Client
     {
         private DataService data = new DataService();
         private FactoryThing<GenderDTO> genderFactory = new FactoryThing<GenderDTO>();
+        private FactoryThing<TypeDTO> typeFactory = new FactoryThing<TypeDTO>();
+        private FactoryThing<TitleDTO> titleFactory = new FactoryThing<TitleDTO>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (this.Request.UrlReferrer == null || this.Request.UrlReferrer.AbsolutePath.ToString() != "/Welcome.aspx")
+            /*if (this.Request.UrlReferrer == null || this.Request.UrlReferrer.AbsolutePath.ToString() != "/Welcome.aspx")
             {
                 Response.Redirect("~/Welcome.aspx");
-            }
+            }*/
             if (!IsPostBack)
             {
                 LoadGenders();
@@ -42,9 +44,9 @@ namespace MonsterWeb.Client
         {
             MonsterType_List.Items.Clear();
 
-            foreach (var monsterType in data.GetMonsterTypes())
+            foreach (var item in data.GetMonsterTypes())
             {
-                MonsterType_List.Items.Add(new ListItem() { Text = monsterType.Name, Value = monsterType.Id.ToString() });
+                MonsterType_List.Items.Add(new ListItem() { Text = item.Name, Value = item.AppId.ToString() });
             }
         }
 
@@ -52,9 +54,9 @@ namespace MonsterWeb.Client
         {
             MonsterTitle_List.Items.Clear();
 
-            foreach (var title in data.GetTitles())
+            foreach (var item in data.GetTitles())
             {
-                MonsterTitle_List.Items.Add(new ListItem() { Text = title.Name, Value = title.Id.ToString() });
+                MonsterTitle_List.Items.Add(new ListItem() { Text = item.Name, Value = item.AppId.ToString() });
             }
         }
 
@@ -66,10 +68,19 @@ namespace MonsterWeb.Client
             }
 
             var gender = genderFactory.Create();
-            gender.AppId = int.Parse(MonsterGender_List.SelectedItem.Value);
-            gender.Name = MonsterName_Text.Text;
+            var monsterType = typeFactory.Create();
+            var title = titleFactory.Create();
 
-            return data.InsertMonster(gender, MonsterType_List.SelectedItem.Text, MonsterTitle_List.SelectedItem.Text);
+            gender.AppId = int.Parse(MonsterGender_List.SelectedItem.Value);
+            gender.Name = MonsterGender_List.SelectedItem.Text;
+
+            monsterType.AppId = int.Parse(MonsterType_List.SelectedItem.Value);
+            monsterType.Name = MonsterType_List.SelectedItem.Text;
+
+            title.AppId = int.Parse(MonsterTitle_List.SelectedItem.Value);
+            title.Name = MonsterTitle_List.SelectedItem.Text;
+
+            return data.InsertMonster(MonsterName_Text.Text, gender, monsterType, title);
         }
 
         protected void MonsterSubmit_Click(object sender, EventArgs e)

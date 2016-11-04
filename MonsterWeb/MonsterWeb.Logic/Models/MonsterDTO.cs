@@ -13,6 +13,9 @@ namespace MonsterWeb.Logic.Models
 
         private string _Name = default(string);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override string Name
         {
             get
@@ -25,17 +28,22 @@ namespace MonsterWeb.Logic.Models
             }
         }
 
-        public new DateTime Creation { get; }
-
         public GenderDTO Gender { get; set; }
         public TypeDTO Type { get; set; }
         public TitleDTO Title { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
         public MonsterDTO(string name) : base()
         {
             Name = name;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         ~MonsterDTO()
         {
             GC.Collect();

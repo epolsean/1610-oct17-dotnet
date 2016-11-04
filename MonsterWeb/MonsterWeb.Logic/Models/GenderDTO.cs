@@ -11,6 +11,9 @@ namespace MonsterWeb.Logic.Models
     {
         private string _Name = default(string);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public override string Name
         {
             get
@@ -23,7 +26,7 @@ namespace MonsterWeb.Logic.Models
             }
         }
 
-        internal GenderDTO() : base()
+        public GenderDTO() : base()
         {
 
         }
