@@ -281,3 +281,7 @@ build/
 /MonsterData/MonsterData.DataClient/Web.config
 /MonsterData/MonsterData.DataClient/Web.Debug.config
 /MonsterData/MonsterData.DataClient/Web.Release.config
+/SportsStore/SportsStore/web.config
+/SportsStore/SportsStore/web.Debug.config
+/SportsStore/SportsStore/web.Release.config
+/MonsterWeb
