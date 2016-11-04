@@ -1,4 +1,5 @@
 ﻿using MonsterWeb.Logic;
+using MonsterWeb.Logic.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,15 @@ namespace MonsterWeb.Client
     public partial class entryform : System.Web.UI.Page
     {
         private DataService data = new DataService();
+        private FactoryThing<GenderDTO> genderFactory = new FactoryThing<GenderDTO>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (this.Request.UrlReferrer == null || this.Request.UrlReferrer.AbsolutePath.ToString() != "/Welcome.aspx")
+            {
+                Response.Redirect("~/Welcome.aspx");
+            }
+            if (!IsPostBack)
             {
                 LoadGenders();
                 LoadMonsterTypes();
@@ -26,9 +32,9 @@ namespace MonsterWeb.Client
         {
             MonsterGender_List.Items.Clear();
 
-            foreach (var gender in data.GetGenders())
+            foreach (var item in data.GetGenders())
             {
-                MonsterGender_List.Items.Add(new ListItem() { Text = gender.Name, Value = gender.Id.ToString() });
+                MonsterGender_List.Items.Add(new ListItem() { Text = item.Name, Value = item.AppId.ToString() });
             }
         }
 
@@ -54,12 +60,16 @@ namespace MonsterWeb.Client
 
         private bool InsertValidated()
         {
-            if(string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedItem.Value))
+            if (string.IsNullOrWhiteSpace(MonsterName_Text.Text) && string.IsNullOrWhiteSpace(MonsterGender_List.SelectedItem.Value))
             {
                 return false;
             }
 
-            return data.InsertMonster(MonsterName_Text.Text, MonsterGender_List.SelectedItem.Text, MonsterType_List.SelectedItem.Text, MonsterTitle_List.SelectedItem.Text);
+            var gender = genderFactory.Create();
+            gender.AppId = int.Parse(MonsterGender_List.SelectedItem.Value);
+            gender.Name = MonsterName_Text.Text;
+
+            return data.InsertMonster(gender, MonsterType_List.SelectedItem.Text, MonsterTitle_List.SelectedItem.Text);
         }
 
         protected void MonsterSubmit_Click(object sender, EventArgs e)

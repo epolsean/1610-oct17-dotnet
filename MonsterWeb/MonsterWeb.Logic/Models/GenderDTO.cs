@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace MonsterWeb.Logic.Models
 {
-    public partial class MonsterDTO : MonsterThing
+    public class GenderDTO : MonsterThing
     {
-        partial void IsNull(ref string data, string value);
-
         private string _Name = default(string);
 
         public override string Name
@@ -25,20 +23,24 @@ namespace MonsterWeb.Logic.Models
             }
         }
 
-        public new DateTime Creation { get; }
-
-        public GenderDTO Gender { get; set; }
-        public TypeDTO Type { get; set; }
-        public TitleDTO Title { get; set; }
-
-        public MonsterDTO(string name) : base()
+        internal GenderDTO() : base()
         {
-            Name = name;
+
         }
 
-        ~MonsterDTO()
+        internal override GenderDTO Create<GenderDTO>()
         {
-            GC.Collect();
+            return new GenderDTO();
+        }
+
+        private void IsNull(ref string data, string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return;
+            }
+
+            data = value;
         }
     }
 }
