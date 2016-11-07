@@ -288,3 +288,7 @@ build/
 /MonsterWeb/MonsterWeb.Client/Web.Debug.config
 /MonsterWeb/MonsterWeb.Client/packages.config
 *.config
+/RegistrationWeb/RegistrationWeb.Client/Service References/RegistrationServiceReference/configuration.svcinfo
+/RegistrationWeb/RegistrationWeb.Client/Service References/RegistrationServiceReference/configuration91.svcinfo
+/RegistrationWeb/RegistrationWeb.Logic/Service References/RegistrationServiceReference/configuration.svcinfo
+/RegistrationWeb/RegistrationWeb.Logic/Service References/RegistrationServiceReference/configuration91.svcinfo

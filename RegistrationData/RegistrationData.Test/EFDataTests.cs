@@ -20,6 +20,17 @@ namespace RegistrationData.Test
         }
 
         [Fact]
+        public void Test_GetCourseEndTime()
+        {
+            var data = new EFData();
+            var expected = 0;
+
+            var actual = data.GetCourse(3).EndTime;
+
+            Assert.NotEqual(actual, expected);
+        }
+
+        [Fact]
         public void Test_GetAllFullCourses()
         {
             var data = new EFData();
@@ -137,7 +148,7 @@ namespace RegistrationData.Test
         {
             var data = new EFData();
             Person newStudent = new Person() { FirstName = "Kevin", LastName = "Hart", PersonType = 1, Active = true };
-            var actual = data.AddStudent(newStudent);
+            var actual = data.AddPerson(newStudent);
 
             Assert.True(actual);
         }

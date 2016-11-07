@@ -116,11 +116,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>53042</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-<<<<<<< HEAD
-          <IISUrl>http://localhost/monsterdataservice</IISUrl>
-=======
           <IISUrl>http://localhost/monsterdataservices/</IISUrl>
->>>>>>> refs/remotes/origin/master
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

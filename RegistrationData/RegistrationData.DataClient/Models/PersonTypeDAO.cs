@@ -4,14 +4,16 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace MonsterData.DataClient.Models
+namespace RegistrationData.DataClient.Models
 {
     [DataContract]
-    public class TitleDAO
+    public class PersonTypeDAO
     {
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public string Name { get; set; }
+        public string Type { get; set; }
+        [DataMember]
+        public bool Active { get; set; }
     }
 }
