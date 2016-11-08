@@ -60,29 +60,32 @@ namespace RegistrationWeb.Client
 
         protected void UpdateId_Click(object sender, EventArgs e)
         {
-            foreach (var person in data.GetPeople())
+            if (PersonId_Text.Text != "")
             {
-                if (person.Id == int.Parse(PersonId_Text.Text))
+                foreach (var person in data.GetPeople())
                 {
-                    PersonName_Text.Text = person.FirstName + " " + person.LastName;
-                    CartStatus.Text = "";
-                    DropStatus.Text = "";
-                    RegisterStatus.Text = "";
-
-                    CourseId2_List.Items.Clear();
-                    CourseId3_List.Items.Clear();
-
-                    foreach (var item in data.GetCartedCourses(person.Id))
+                    if (person.Id == int.Parse(PersonId_Text.Text))
                     {
-                        CourseId2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                    }
+                        PersonName_Text.Text = person.FirstName + " " + person.LastName;
+                        CartStatus.Text = "";
+                        DropStatus.Text = "";
+                        RegisterStatus.Text = "";
 
-                    foreach (var item in data.GetStudentSchedule(person))
-                    {
-                        CourseId3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                    }
+                        CourseId2_List.Items.Clear();
+                        CourseId3_List.Items.Clear();
 
-                    return;
+                        foreach (var item in data.GetCartedCourses(person.Id))
+                        {
+                            CourseId2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                        }
+
+                        foreach (var item in data.GetStudentSchedule(person))
+                        {
+                            CourseId3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                        }
+
+                        return;
+                    }
                 }
             }
 

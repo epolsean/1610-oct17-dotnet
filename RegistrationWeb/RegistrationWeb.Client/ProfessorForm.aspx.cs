@@ -27,23 +27,39 @@ namespace RegistrationWeb.Client
             CourseTitle3_List.Items.Clear();
             CourseTitle4_List.Items.Clear();
 
-            foreach (var item in data.GetCourses())
+            if (PersonId_Text.Text != "N/A" && PersonId_Text.Text != "ERROR: Invalid ID" && PersonId_Text.Text != "")
             {
-                CourseTitle2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                CourseTitle3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                CourseTitle4_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                foreach (var item in data.GetCourses())
+                {
+                    if (item.Professor.Id == int.Parse(PersonId_Text.Text))
+                    {
+                        CourseTitle2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                        CourseTitle3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                        CourseTitle4_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                    }
+                }
+
+                var course = data.GetCourse(int.Parse(CourseTitle2_List.SelectedValue));
+                var course2 = data.GetCourse(int.Parse(CourseTitle3_List.SelectedValue));
+
+                CourseDepartment2_Text.Text = course.Department;
+                CourseTime2_Text.Text = course.StartTime + ":00 - " + course.EndTime + ":00";
+                CourseCapacity2_Text.Text = data.GetEnrolledStudentsByCourse(course).Count + "/" + course.Capacity;
+                CourseCredit2_Text.Text = course.Credit.ToString();
+                CourseStart3_Text.Text = course2.StartTime.ToString();
+                CourseEnd3_Text.Text = course2.EndTime.ToString();
+                CourseCapacity3_Text.Text = course2.Capacity.ToString();
+
+                return;
             }
 
-            var course = data.GetCourse(int.Parse(CourseTitle2_List.SelectedValue));
-            var course2 = data.GetCourse(int.Parse(CourseTitle3_List.SelectedValue));
-            CourseDepartment2_Text.Text = course.Department;
-            CourseTime2_Text.Text = course.StartTime + ":00 - " + course.EndTime + ":00";
-            CourseCapacity2_Text.Text = data.GetEnrolledStudentsByCourse(course).Count + "/" + course.Capacity;
-            CourseCredit2_Text.Text = course.Credit.ToString();
-            CourseStart3_Text.Text = course2.StartTime.ToString();
-            CourseEnd3_Text.Text = course2.EndTime.ToString();
-            CourseCapacity3_Text.Text = course2.Capacity.ToString();
-
+            CourseDepartment2_Text.Text = "";
+            CourseTime2_Text.Text = "";
+            CourseCapacity2_Text.Text = "";
+            CourseCredit2_Text.Text = "";
+            CourseStart3_Text.Text = "";
+            CourseEnd3_Text.Text = "";
+            CourseCapacity3_Text.Text = "";
         }
 
         protected void CurrentCourse(object sender, EventArgs e)
@@ -70,30 +86,44 @@ namespace RegistrationWeb.Client
 
         protected void UpdateId_Click(object sender, EventArgs e)
         {
-            foreach (var person in data.GetPeople())
+            if (PersonId_Text.Text != "")
             {
-                if (person.Id == int.Parse(PersonId_Text.Text))
+                foreach (var person in data.GetPeople())
                 {
-                    PersonName_Text.Text = person.FirstName + " " + person.LastName;
-                    AddStatus.Text = "";
-                    CancelStatus.Text = "";
-                    ModifyStatus.Text = "";
-
-                    CourseTitle2_List.Items.Clear();
-                    CourseTitle3_List.Items.Clear();
-                    CourseTitle4_List.Items.Clear();
-
-                    foreach (var item in data.GetCourses())
+                    if (person.Id == int.Parse(PersonId_Text.Text))
                     {
-                        if (item.Professor.Id == person.Id)
-                        {
-                            CourseTitle2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                            CourseTitle3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                            CourseTitle4_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
-                        }
-                    }
+                        PersonName_Text.Text = person.FirstName + " " + person.LastName;
+                        AddStatus.Text = "";
+                        CancelStatus.Text = "";
+                        ModifyStatus.Text = "";
 
-                    return;
+                        CourseTitle2_List.Items.Clear();
+                        CourseTitle3_List.Items.Clear();
+                        CourseTitle4_List.Items.Clear();
+
+                        foreach (var item in data.GetCourses())
+                        {
+                            if (item.Professor.Id == person.Id)
+                            {
+                                CourseTitle2_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                                CourseTitle3_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                                CourseTitle4_List.Items.Add(new ListItem() { Text = item.Title, Value = item.Id.ToString() });
+                            }
+                        }
+
+                        var course = data.GetCourse(int.Parse(CourseTitle2_List.SelectedValue));
+                        var course2 = data.GetCourse(int.Parse(CourseTitle3_List.SelectedValue));
+
+                        CourseDepartment2_Text.Text = course.Department;
+                        CourseTime2_Text.Text = course.StartTime + ":00 - " + course.EndTime + ":00";
+                        CourseCapacity2_Text.Text = data.GetEnrolledStudentsByCourse(course).Count + "/" + course.Capacity;
+                        CourseCredit2_Text.Text = course.Credit.ToString();
+                        CourseStart3_Text.Text = course2.StartTime.ToString();
+                        CourseEnd3_Text.Text = course2.EndTime.ToString();
+                        CourseCapacity3_Text.Text = course2.Capacity.ToString();
+
+                        return;
+                    }
                 }
             }
 

@@ -78,7 +78,7 @@
         <div class="Enrolled_By_Course">
             <h3>Currently Enrolled</h3>
             <asp:Label runat="server" ID="CourseTitle4">Title: </asp:Label>
-            <asp:DropDownList runat="server" ID="CourseTitle4_List"></asp:DropDownList>
+            <asp:DropDownList runat="server" ID="CourseTitle4_List" AutoPostBack="true"></asp:DropDownList>
             </br>
             <%if(PersonId_Text.Text != string.Empty && PersonName_Text.Text != "ERROR: Invalid ID")
                 {

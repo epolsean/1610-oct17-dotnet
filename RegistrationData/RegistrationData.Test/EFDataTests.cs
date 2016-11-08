@@ -1,4 +1,6 @@
 ﻿using RegistrationData.DataAccess;
+using RegistrationData.DataClient;
+using RegistrationData.DataClient.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -91,6 +93,17 @@ namespace RegistrationData.Test
         }
 
         [Fact]
+        public void Test_AddCourse2()
+        {
+            var data = new RegistrationService();
+            var person = data.GetPerson(5);
+            var course = new CourseDAO() { Title = "TST-101", Department = "Quality Control", Professor = person, StartTime = 5, EndTime = 6, Capacity = 10, Credit = 5, Active = true };
+            var actual = data.AddCourse(course);
+
+            Assert.True(actual);
+        }
+
+        [Fact]
         public void Test_CartCourse()
         {
             var data = new EFData();
@@ -127,7 +140,19 @@ namespace RegistrationData.Test
         public void Test_CancelCourse()
         {
             var data = new EFData();
-            Course course = data.GetCourse(5);
+            var course = data.GetCourse(5);
+
+            var actual = data.CancelCourse(course);
+
+            Assert.True(actual);
+        }
+
+        [Fact]
+        public void Test_CancelCourse2()
+        {
+            var data = new RegistrationService();
+            var course = data.GetCourse(4);
+
             var actual = data.CancelCourse(course);
 
             Assert.True(actual);

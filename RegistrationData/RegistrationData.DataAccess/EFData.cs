@@ -128,7 +128,24 @@ namespace RegistrationData.DataAccess
             if (course.Professor == person.PersonId && CheckTimeAvailability(course, person) == true)
             {
                 db.Courses.Add(course);
+
+                if(db.SaveChanges() > 0)
+                {
+                    if(AddSchedule(course, person))
+                    {
+
+                    }
+                }
             }
+
+            return db.SaveChanges() > 0;
+        }
+
+        public bool AddSchedule(Course course, Person person)
+        {
+            var schedule = new Schedule() { Course = course, Person = person, Active = true };
+
+            db.Schedules.Add(schedule);
 
             return db.SaveChanges() > 0;
         }
@@ -176,11 +193,21 @@ namespace RegistrationData.DataAccess
         {
             if (db.Courses.Where(c => c.CourseId == course.CourseId).Count() != 0)
             {
-                var currentStudents = GetEnrolledStudentsByCourse(course);
+                var allPeople = new List<Person>();
 
-                foreach (Person student in currentStudents)
+                foreach (var item in GetSchedules())
                 {
-                    DropCourse(course, student);
+                    if (item.CourseId == course.CourseId)
+                    {
+                        if (DropCourse(course, item.Person))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
 
                 var entry = db.Entry<Course>(course);
@@ -212,7 +239,13 @@ namespace RegistrationData.DataAccess
 
                 if(newStart != 0 || newEnd != 0)
                 {
-                    if(CheckTimeAvailability(course, GetPerson(course.Professor)) == true)
+                    if(CheckTimeAvailability(course, GetPerson(course.Professor)))
+                    {
+                        var entry = db.Entry<Course>(course);
+
+                        entry.State = EntityState.Modified;
+                    }
+                    else if(!CheckTimeAvailability(course, GetPerson(course.Professor)) && (newStart == oldStart || newEnd == oldEnd))
                     {
                         var entry = db.Entry<Course>(course);
 
@@ -222,6 +255,8 @@ namespace RegistrationData.DataAccess
                     {
                         course.StartTime = oldStart;
                         course.EndTime = oldEnd;
+
+                        return true;
                     }
                 }
                 else

@@ -31,7 +31,7 @@ namespace RegistrationData.DataClient
             c.CourseId = course.Id;
             c.Title = course.Title;
             c.Department = course.Department;
-            c.Professor = course.Professor.Id;
+            c.Professor = PersonMapper.MapToPerson(course.Professor).PersonId;
             c.StartTime = course.StartTime;
             c.EndTime = course.EndTime;
             c.Capacity = course.Capacity;

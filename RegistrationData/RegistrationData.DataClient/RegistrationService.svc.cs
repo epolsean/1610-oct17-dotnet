@@ -16,7 +16,7 @@ namespace RegistrationData.DataClient
         public bool AddCourse(CourseDAO course)
         {
             var c = CourseMapper.MapToCourse(course);
-            var p = PersonMapper.MapToPerson(course.Professor);
+            var p = db.GetPerson(course.Professor.Id);
 
             return db.AddCourse(c, p);
         }

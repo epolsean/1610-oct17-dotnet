@@ -27,7 +27,7 @@ namespace RegistrationData.DataClient
             p.PersonId = person.Id;
             p.FirstName = person.FirstName;
             p.LastName = person.LastName;
-            p.PersonType = person.PersonType.Id;
+            p.PersonType = PersonTypeMapper.MapToPersonType(person.PersonType).PersonTypeId;
             p.Active = person.Active;
 
             return p;
