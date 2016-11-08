@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MonsterWeb.Client.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:Label runat="server" Font-Size="XX-Large">.NET Training</asp:Label>
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:Label runat="server" Font-Size="Large">Copyright &copy; 2016 blah, blah, blah</asp:Label>
+    </form>
+</body>
+</html>

@@ -80,6 +80,10 @@
       <Project>{4142bb77-63f8-487f-9b3a-5c4ca67ee1a9}</Project>
       <Name>RegistrationData.DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RegistrationData.DataClient\RegistrationData.DataClient.csproj">
+      <Project>{18DC8852-E2A3-4A04-8366-0ED88EBD1C72}</Project>
+      <Name>RegistrationData.DataClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -57,6 +57,11 @@ namespace RegistrationData.DataAccess
             return db.Schedules.Where(s => s.CourseId == cid && s.PersonId == pid).Single();
         }
 
+        public PersonType GetPersonType(int pid)
+        {
+            return db.PersonTypes.Where(pt => pt.PersonTypeId == pid).Single();
+        }
+
         public List<Course> GetAllOpenCourses()
         {
             var openCourses = db.Courses.Where(c => c.Capacity > db.Schedules.Where(s => s.CourseId == c.CourseId).Count());
@@ -74,7 +79,7 @@ namespace RegistrationData.DataAccess
                     person = p,
                     schedules = s
                 })
-                .Where(sp => sp.schedules.CourseId == course.CourseId)
+                .Where(sp => sp.schedules.CourseId == course.CourseId && sp.schedules.Active == true && sp.person.PersonType == 1)
                 .Select(x => x.person);
 
             return enrolledStudents.ToList();
@@ -104,21 +109,17 @@ namespace RegistrationData.DataAccess
         #endregion
 
 
-        public bool AddStudent(Person student)
+        public bool AddPerson(Person person)
         {
-            if (student.PersonType == 1)
-            {
-                db.People.Add(student);
-            }
+            db.People.Add(person);
+
             return db.SaveChanges() > 0;
         }
 
-        public bool AddProfessor(Person professor)
+        public bool AddPersonType(PersonType personType)
         {
-            if (professor.PersonType == 2)
-            {
-                db.People.Add(professor);
-            }
+            db.PersonTypes.Add(personType);
+
             return db.SaveChanges() > 0;
         }
 
@@ -127,7 +128,24 @@ namespace RegistrationData.DataAccess
             if (course.Professor == person.PersonId && CheckTimeAvailability(course, person) == true)
             {
                 db.Courses.Add(course);
+
+                if(db.SaveChanges() > 0)
+                {
+                    if(AddSchedule(course, person))
+                    {
+
+                    }
+                }
             }
+
+            return db.SaveChanges() > 0;
+        }
+
+        public bool AddSchedule(Course course, Person person)
+        {
+            var schedule = new Schedule() { Course = course, Person = person, Active = true };
+
+            db.Schedules.Add(schedule);
 
             return db.SaveChanges() > 0;
         }
@@ -175,11 +193,21 @@ namespace RegistrationData.DataAccess
         {
             if (db.Courses.Where(c => c.CourseId == course.CourseId).Count() != 0)
             {
-                var currentStudents = GetEnrolledStudentsByCourse(course);
+                var allPeople = new List<Person>();
 
-                foreach (Person student in currentStudents)
+                foreach (var item in GetSchedules())
                 {
-                    DropCourse(course, student);
+                    if (item.CourseId == course.CourseId)
+                    {
+                        if (DropCourse(course, item.Person))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
 
                 var entry = db.Entry<Course>(course);
@@ -211,7 +239,13 @@ namespace RegistrationData.DataAccess
 
                 if(newStart != 0 || newEnd != 0)
                 {
-                    if(CheckTimeAvailability(course, GetPerson(course.Professor)) == true)
+                    if(CheckTimeAvailability(course, GetPerson(course.Professor)))
+                    {
+                        var entry = db.Entry<Course>(course);
+
+                        entry.State = EntityState.Modified;
+                    }
+                    else if(!CheckTimeAvailability(course, GetPerson(course.Professor)) && (newStart == oldStart || newEnd == oldEnd))
                     {
                         var entry = db.Entry<Course>(course);
 
@@ -221,6 +255,8 @@ namespace RegistrationData.DataAccess
                     {
                         course.StartTime = oldStart;
                         course.EndTime = oldEnd;
+
+                        return true;
                     }
                 }
                 else

@@ -281,3 +281,14 @@ build/
 /MonsterData/MonsterData.DataClient/Web.config
 /MonsterData/MonsterData.DataClient/Web.Debug.config
 /MonsterData/MonsterData.DataClient/Web.Release.config
+/MonsterWeb/MonsterWeb.Tests/app.config
+/MonsterWeb/MonsterWeb.Tests/packages.config
+/MonsterWeb/MonsterWeb.Logic/app.config
+/MonsterWeb/MonsterWeb.Client/Web.config
+/MonsterWeb/MonsterWeb.Client/Web.Debug.config
+/MonsterWeb/MonsterWeb.Client/packages.config
+*.config
+/RegistrationWeb/RegistrationWeb.Client/Service References/RegistrationServiceReference/configuration.svcinfo
+/RegistrationWeb/RegistrationWeb.Client/Service References/RegistrationServiceReference/configuration91.svcinfo
+/RegistrationWeb/RegistrationWeb.Logic/Service References/RegistrationServiceReference/configuration.svcinfo
+/RegistrationWeb/RegistrationWeb.Logic/Service References/RegistrationServiceReference/configuration91.svcinfo

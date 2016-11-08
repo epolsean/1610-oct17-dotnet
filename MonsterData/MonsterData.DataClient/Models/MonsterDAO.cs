@@ -15,5 +15,9 @@ namespace MonsterData.DataClient.Models
         public string Name { get; set; }
         [DataMember]
         public GenderDAO Gender { get; set; }
+        [DataMember]
+        public MonsterTypeDAO MonsterType { get; set; }
+        [DataMember]
+        public TitleDAO Title { get; set; }
     }
 }
