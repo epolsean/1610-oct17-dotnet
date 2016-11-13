@@ -281,3 +281,11 @@ build/
 /MonsterData/MonsterData.DataClient/Web.config
 /MonsterData/MonsterData.DataClient/Web.Debug.config
 /MonsterData/MonsterData.DataClient/Web.Release.config
+/PizzaStoreApi/PizzaStoreApi.Client/App_Start/WebApiConfig.cs
+/PizzaStoreApi/PizzaStoreApi.Client/Web.config
+/PizzaStoreApi/PizzaStoreApi.Client/Web.Debug.config
+/PizzaStoreApi/PizzaStoreApi.Client/Web.Release.config
+/PizzaStoreMVC/PizzaStoreMVC.Client/packages.config
+/PizzaStoreMVC/PizzaStoreMVC.Client/Web.config
+/PizzaStoreMVC/PizzaStoreMVC.Client/Web.Debug.config
+*.config
