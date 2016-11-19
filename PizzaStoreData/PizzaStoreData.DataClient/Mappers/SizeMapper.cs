@@ -5,7 +5,7 @@ using System.Web;
 using PizzaStoreData.DataAccess;
 using PizzaStoreData.DataClient.Models;
 
-namespace PizzaStoreData.DataClient
+namespace PizzaStoreData.DataClient.Mappers
 {
     public class SizeMapper
     {

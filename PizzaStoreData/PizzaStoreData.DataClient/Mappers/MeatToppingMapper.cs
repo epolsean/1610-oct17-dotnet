@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PizzaStoreData.DataClient
+namespace PizzaStoreData.DataClient.Mappers
 {
     public class MeatToppingMapper
     {

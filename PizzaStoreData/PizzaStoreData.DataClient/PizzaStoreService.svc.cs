@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using PizzaStoreData.DataAccess;
 using PizzaStoreData.DataClient.Models;
+using PizzaStoreData.DataClient.Mappers;
 
 namespace PizzaStoreData.DataClient
 {

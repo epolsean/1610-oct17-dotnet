@@ -15,25 +15,20 @@
         <EntityTypeShape EntityType="PizzaStoreDBModel.Meat" Width="1.5" PointX="2.25" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.MeatTopping" Width="1.5" PointX="2.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Name" Width="1.5" PointX="0.5" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaStoreDBModel.PaymentType" Width="1.5" PointX="9.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.PaymentType" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Phone" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Pizza" Width="1.5" PointX="12.125" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.PizzaOrder" Width="1.5" PointX="12.125" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.PizzaOrderDetail" Width="1.5" PointX="12.125" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Sauce" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Size" Width="1.5" PointX="9.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaStoreDBModel.Store" Width="1.5" PointX="2.25" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaStoreDBModel.StoreHour" Width="1.5" PointX="5.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Store" Width="1.5" PointX="5.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.StoreHour" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.Vegetable" Width="1.5" PointX="0.5" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="PizzaStoreDBModel.VegetableTopping" Width="1.5" PointX="0.5" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="PizzaStoreDBModel.fk_customer_addressid" ManuallyRouted="false" >
         </AssociationConnector>
-        <AssociationConnector Association="PizzaStoreDBModel.fk_store_addressid" ManuallyRouted="true" >
-          <ConnectorPoint PointX="3.0071080235870844" PointY="7.125" />
-          <ConnectorPoint PointX="3.0071080235870844" PointY="6.9134706060482909" />
-          <ConnectorPoint PointX="0.32623104899659872" PointY="6.9134706060482909" />
-          <ConnectorPoint PointX="0.32623104899659872" PointY="13.158166196297939" />
-          <ConnectorPoint PointX="2.25" PointY="13.158166196297939" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_store_addressid" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="PizzaStoreDBModel.fk_cardpayment_customerid" ManuallyRouted="false" />
         <AssociationConnector Association="PizzaStoreDBModel.fk_cheesetopping_cheeseid" ManuallyRouted="false" />
@@ -64,12 +59,7 @@
           <ConnectorPoint PointX="2.9008920892467729" PointY="5.922587890625" />
         </AssociationConnector>
         <AssociationConnector Association="PizzaStoreDBModel.fk_pizzaorder_paymenttypeid" ManuallyRouted="false" />
-        <AssociationConnector Association="PizzaStoreDBModel.fk_store_phoneid" ManuallyRouted="true" >
-          <ConnectorPoint PointX="6.5927307059535876" PointY="7.125" />
-          <ConnectorPoint PointX="6.5927307059535876" PointY="6.7411221209432437" />
-          <ConnectorPoint PointX="0.15388256389155108" PointY="6.7411221209432437" />
-          <ConnectorPoint PointX="0.15388256389155108" PointY="13.323136475800755" />
-          <ConnectorPoint PointX="2.25" PointY="13.323136475800755" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_store_phoneid" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="PizzaStoreDBModel.fk_pizza_sauceid" ManuallyRouted="false" />
         <AssociationConnector Association="PizzaStoreDBModel.fk_pizza_sizeid" ManuallyRouted="false" />
@@ -81,9 +71,7 @@
           <ConnectorPoint PointX="1.2649937276803702" PointY="6.50308021455141" />
           <ConnectorPoint PointX="1.2649937276803702" PointY="5.922587890625" />
         </AssociationConnector>
-        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzaorder_storeid" ManuallyRouted="true" >
-          <ConnectorPoint PointX="3.75" PointY="14.735539121004729" />
-          <ConnectorPoint PointX="12.125" PointY="14.735078097486873" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzaorder_storeid" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="PizzaStoreDBModel.fk_pizzaorderdetails_orderid" ManuallyRouted="false" />
         <AssociationConnector Association="PizzaStoreDBModel.fk_store_hoursid" ManuallyRouted="false" />
