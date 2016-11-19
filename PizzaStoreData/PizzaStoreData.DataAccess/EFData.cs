@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PizzaStoreData.DataAccess
 {
-    class EFData
+    public class EFData
     {
         private PizzaStoreDBEntities db = new PizzaStoreDBEntities();
 
@@ -379,7 +379,7 @@ namespace PizzaStoreData.DataAccess
         #endregion
 
         #region Modified Functions
-        public bool RemoveAddressDetail(AddressDetail addressDetail)
+        public bool ChangeAddressDetail(AddressDetail addressDetail)
         {
             if (db.AddressDetails.Where(ad => ad.AddressID == addressDetail.AddressID).Count() != 0)
             {
@@ -391,7 +391,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveCardPayment(CardPayment cardPayment)
+        public bool ChangeCardPayment(CardPayment cardPayment)
         {
             if (db.CardPayments.Where(cp => cp.CardPaymentID == cardPayment.CardPaymentID).Count() != 0)
             {
@@ -403,7 +403,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveCheese(Cheese cheese)
+        public bool ChangeCheese(Cheese cheese)
         {
             if (db.Cheese.Where(c => c.CheeseID == cheese.CheeseID).Count() != 0)
             {
@@ -415,7 +415,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveCheeseTopping(CheeseTopping cheeseTopping)
+        public bool ChangeCheeseTopping(CheeseTopping cheeseTopping)
         {
             if (db.CheeseToppings.Where(ct => ct.CheeseToppingID == cheeseTopping.CheeseToppingID).Count() != 0)
             {
@@ -427,7 +427,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveCrust(Crust crust)
+        public bool ChangeCrust(Crust crust)
         {
             if (db.Crusts.Where(c => c.CrustID == crust.CrustID).Count() != 0)
             {
@@ -439,7 +439,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveCustomer(Customer customer)
+        public bool ChangeCustomer(Customer customer)
         {
             if (db.Customers.Where(c => c.CustomerID == customer.CustomerID).Count() != 0)
             {
@@ -451,7 +451,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveEmail(Email email)
+        public bool ChangeEmail(Email email)
         {
             if (db.Emails.Where(e => e.EmailID == email.EmailID).Count() != 0)
             {
@@ -463,7 +463,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveMeat(Meat meat)
+        public bool ChangeMeat(Meat meat)
         {
             if (db.Meats.Where(m => m.MeatID == meat.MeatID).Count() != 0)
             {
@@ -475,7 +475,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveMeatTopping(MeatTopping meatTopping)
+        public bool ChangeMeatTopping(MeatTopping meatTopping)
         {
             if (db.MeatToppings.Where(mt => mt.MeatToppingID == meatTopping.MeatToppingID).Count() != 0)
             {
@@ -487,7 +487,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveName(Name name)
+        public bool ChangeName(Name name)
         {
             if (db.Names.Where(n => n.NameID == name.NameID).Count() != 0)
             {
@@ -499,7 +499,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemovePaymentType(PaymentType paymentType)
+        public bool ChangePaymentType(PaymentType paymentType)
         {
             if (db.PaymentTypes.Where(pt => pt.PaymentTypeID == paymentType.PaymentTypeID).Count() != 0)
             {
@@ -511,7 +511,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemovePhone(Phone phone)
+        public bool ChangePhone(Phone phone)
         {
             if (db.Phones.Where(p => p.PhoneID == phone.PhoneID).Count() != 0)
             {
@@ -523,7 +523,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemovePizza(Pizza pizza)
+        public bool ChangePizza(Pizza pizza)
         {
             if (db.Pizzas.Where(p => p.PizzaID == pizza.PizzaID).Count() != 0)
             {
@@ -535,7 +535,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemovePizzaOrder(PizzaOrder pizzaOrder)
+        public bool ChangePizzaOrder(PizzaOrder pizzaOrder)
         {
             if (db.PizzaOrders.Where(po => po.OrderID == pizzaOrder.OrderID).Count() != 0)
             {
@@ -547,7 +547,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemovePizzaOrderDetail(PizzaOrderDetail pizzaOrderDetail)
+        public bool ChangePizzaOrderDetail(PizzaOrderDetail pizzaOrderDetail)
         {
             if (db.PizzaOrderDetails.Where(pod => pod.PizzaOrderDetatilsID == pizzaOrderDetail.PizzaOrderDetatilsID).Count() != 0)
             {
@@ -559,7 +559,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveSauce(Sauce sauce)
+        public bool ChangeSauce(Sauce sauce)
         {
             if (db.Sauces.Where(s => s.SauceID == sauce.SauceID).Count() != 0)
             {
@@ -571,7 +571,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveSize(Size size)
+        public bool ChangeSize(Size size)
         {
             if (db.Sizes.Where(s => s.SizeID == size.SizeID).Count() != 0)
             {
@@ -583,7 +583,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveStore(Store store)
+        public bool ChangeStore(Store store)
         {
             if (db.Stores.Where(s => s.StoreID == store.StoreID).Count() != 0)
             {
@@ -595,7 +595,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveStoreHour(StoreHour storeHour)
+        public bool ChangeStoreHour(StoreHour storeHour)
         {
             if (db.StoreHours.Where(sh => sh.HoursID == storeHour.HoursID).Count() != 0)
             {
@@ -607,7 +607,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveVegetable(Vegetable vegetable)
+        public bool ChangeVegetable(Vegetable vegetable)
         {
             if (db.Vegetables.Where(v => v.VegetableID == vegetable.VegetableID).Count() != 0)
             {
@@ -619,7 +619,7 @@ namespace PizzaStoreData.DataAccess
             return db.SaveChanges() > 0;
         }
 
-        public bool RemoveVegetableTopping(VegetableTopping vegetableTopping)
+        public bool ChangeVegetableTopping(VegetableTopping vegetableTopping)
         {
             if (db.VegetableToppings.Where(vt => vt.VegetableToppingID == vegetableTopping.VegetableToppingID).Count() != 0)
             {

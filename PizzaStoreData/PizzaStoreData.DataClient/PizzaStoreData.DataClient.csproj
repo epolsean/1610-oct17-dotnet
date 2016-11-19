@@ -16,7 +16,7 @@
     <RootNamespace>PizzaStoreData.DataClient</RootNamespace>
     <AssemblyName>PizzaStoreData.DataClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,12 +44,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -77,12 +87,23 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="PizzaStoreService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\AddressDetailMapper.cs" />
+    <Compile Include="Mappers\CardPaymentMapper.cs" />
+    <Compile Include="Mappers\CheeseMapper.cs" />
+    <Compile Include="Mappers\CheeseToppingMapper.cs" />
+    <Compile Include="Mappers\CrustMapper.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
+    <Compile Include="Mappers\EmailMapper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IPizzaStoreService.cs" />
+    <Compile Include="Mappers\MeatMapper.cs" />
+    <Compile Include="Mappers\MeatToppingMapper.cs" />
     <Compile Include="Models\AddressDetailDAO.cs" />
     <Compile Include="Models\CardPaymentDAO.cs" />
     <Compile Include="Models\CheeseDAO.cs" />
@@ -104,10 +125,31 @@
     <Compile Include="Models\StoreHourDAO.cs" />
     <Compile Include="Models\VegetableDAO.cs" />
     <Compile Include="Models\VegetableToppingDAO.cs" />
+    <Compile Include="Mappers\NameMapper.cs" />
+    <Compile Include="Mappers\PaymentTypeMapper.cs" />
+    <Compile Include="Mappers\PhoneMapper.cs" />
+    <Compile Include="Mappers\PizzaMapper.cs" />
+    <Compile Include="Mappers\PizzaOrderDetailMapper.cs" />
+    <Compile Include="Mappers\PizzaOrderMapper.cs" />
+    <Compile Include="PizzaStoreService.svc.cs">
+      <DependentUpon>PizzaStoreService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mappers\SauceMapper.cs" />
+    <Compile Include="Mappers\SizeMapper.cs" />
+    <Compile Include="Mappers\StoreHourMapper.cs" />
+    <Compile Include="Mappers\StoreMapper.cs" />
+    <Compile Include="Mappers\VegetableMapper.cs" />
+    <Compile Include="Mappers\VegetableToppingMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PizzaStoreData.DataAccess\PizzaStoreData.DataAccess.csproj">
+      <Project>{F2BF920B-3995-4A25-BABD-039E5C617707}</Project>
+      <Name>PizzaStoreData.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -124,7 +166,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51164</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54409/</IISUrl>
+          <IISUrl>http://localhost/pizzastoredataservice</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

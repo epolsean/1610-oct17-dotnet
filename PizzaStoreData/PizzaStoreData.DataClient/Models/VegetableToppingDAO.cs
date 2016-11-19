@@ -12,7 +12,9 @@ namespace PizzaStoreData.DataClient.Models
         [DataMember]
         public int Id { get; set; }
         [DataMember]
-        public string Name { get; set; }
+        public PizzaDAO Pizza { get; set; }
+        [DataMember]
+        public VegetableDAO Vegetable { get; set; }
         [DataMember]
         public bool Active { get; set; }
     }
