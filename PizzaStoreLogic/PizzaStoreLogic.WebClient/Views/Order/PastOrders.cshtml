@@ -7,6 +7,8 @@
     DataService data = new DataService();
     PizzaStoreLogic.Logic.Models.CustomerDTO customer = (PizzaStoreLogic.Logic.Models.CustomerDTO)Session["Customer"];
     string collapseTab = "#collapse";
+    string collapseName = "collapse";
+    string headingName = "heading2";
 }
 
 <h1>Past Orders</h1>
@@ -17,16 +19,20 @@
     {
         if (orderDetail.Order.Customer.Id == customer.Id)
         {
-            {collapseTab = "#collapse" + unitsMap[index];}
+            {
+                collapseTab = "#collapse2" + unitsMap[index];
+                collapseName = "collapse2" + unitsMap[index];
+                headingName = "heading2" + unitsMap[index];
+            }
             <div class="panel panel-default">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="@collapseTab" aria-expanded="false" aria-controls="collapseOne">
-                    <div role="tab" class="panel-heading" id="headingOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="@collapseTab" aria-expanded="false" aria-controls="@collapseName">
+                    <div role="tab" class="panel-heading" id="@headingName">
                         <h4 class="panel-title">
                             Order @unitsMap[index]
                         </h4>
                     </div>
                 </a>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div id="@collapseName" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headingName">
                     <div class="panel-body">
                         <div class="checkbox">
                             <table id="cartTable" class="table">
@@ -89,8 +95,8 @@
                 </div>
             </div>
             <hr />
+            index++;
         }
-        index++;
     }
 </div>
 
