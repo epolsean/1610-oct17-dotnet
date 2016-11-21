@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataClient.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataClient.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAddressDetailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AddressDetailDAO" nillable="true" type="tns:AddressDetailDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddressDetailDAO" nillable="true" type="tns:ArrayOfAddressDetailDAO" />
+  <xs:complexType name="AddressDetailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zipcode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddressDetailDAO" nillable="true" type="tns:AddressDetailDAO" />
+  <xs:complexType name="ArrayOfCardPaymentDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CardPaymentDAO" nillable="true" type="tns:CardPaymentDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCardPaymentDAO" nillable="true" type="tns:ArrayOfCardPaymentDAO" />
+  <xs:complexType name="CardPaymentDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CVC" type="xs:int" />
+      <xs:element minOccurs="0" name="CardHolderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:CustomerDAO" />
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CardPaymentDAO" nillable="true" type="tns:CardPaymentDAO" />
+  <xs:complexType name="CustomerDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:AddressDetailDAO" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="tns:EmailDAO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:NameDAO" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="tns:PhoneDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerDAO" nillable="true" type="tns:CustomerDAO" />
+  <xs:complexType name="EmailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailDAO" nillable="true" type="tns:EmailDAO" />
+  <xs:complexType name="NameDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameDAO" nillable="true" type="tns:NameDAO" />
+  <xs:complexType name="PhoneDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhoneDAO" nillable="true" type="tns:PhoneDAO" />
+  <xs:complexType name="ArrayOfCheeseDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheeseDAO" nillable="true" type="tns:CheeseDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheeseDAO" nillable="true" type="tns:ArrayOfCheeseDAO" />
+  <xs:complexType name="CheeseDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheeseDAO" nillable="true" type="tns:CheeseDAO" />
+  <xs:complexType name="ArrayOfCheeseToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CheeseToppingDAO" nillable="true" type="tns:CheeseToppingDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCheeseToppingDAO" nillable="true" type="tns:ArrayOfCheeseToppingDAO" />
+  <xs:complexType name="CheeseToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cheese" nillable="true" type="tns:CheeseDAO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pizza" nillable="true" type="tns:PizzaDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheeseToppingDAO" nillable="true" type="tns:CheeseToppingDAO" />
+  <xs:complexType name="PizzaDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cheese" nillable="true" type="tns:CheeseDAO" />
+      <xs:element minOccurs="0" name="Crust" nillable="true" type="tns:CrustDAO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Sauce" nillable="true" type="tns:SauceDAO" />
+      <xs:element minOccurs="0" name="Size" nillable="true" type="tns:SizeDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PizzaDAO" nillable="true" type="tns:PizzaDAO" />
+  <xs:complexType name="CrustDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CrustDAO" nillable="true" type="tns:CrustDAO" />
+  <xs:complexType name="SauceDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SauceDAO" nillable="true" type="tns:SauceDAO" />
+  <xs:complexType name="SizeDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SizeDAO" nillable="true" type="tns:SizeDAO" />
+  <xs:complexType name="ArrayOfCrustDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CrustDAO" nillable="true" type="tns:CrustDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCrustDAO" nillable="true" type="tns:ArrayOfCrustDAO" />
+  <xs:complexType name="ArrayOfCustomerDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomerDAO" nillable="true" type="tns:CustomerDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCustomerDAO" nillable="true" type="tns:ArrayOfCustomerDAO" />
+  <xs:complexType name="ArrayOfEmailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailDAO" nillable="true" type="tns:EmailDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailDAO" nillable="true" type="tns:ArrayOfEmailDAO" />
+  <xs:complexType name="ArrayOfMeatDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeatDAO" nillable="true" type="tns:MeatDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeatDAO" nillable="true" type="tns:ArrayOfMeatDAO" />
+  <xs:complexType name="MeatDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeatDAO" nillable="true" type="tns:MeatDAO" />
+  <xs:complexType name="ArrayOfMeatToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MeatToppingDAO" nillable="true" type="tns:MeatToppingDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMeatToppingDAO" nillable="true" type="tns:ArrayOfMeatToppingDAO" />
+  <xs:complexType name="MeatToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Meat" nillable="true" type="tns:MeatDAO" />
+      <xs:element minOccurs="0" name="Pizza" nillable="true" type="tns:PizzaDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeatToppingDAO" nillable="true" type="tns:MeatToppingDAO" />
+  <xs:complexType name="ArrayOfNameDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameDAO" nillable="true" type="tns:NameDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameDAO" nillable="true" type="tns:ArrayOfNameDAO" />
+  <xs:complexType name="ArrayOfPaymentTypeDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentTypeDAO" nillable="true" type="tns:PaymentTypeDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaymentTypeDAO" nillable="true" type="tns:ArrayOfPaymentTypeDAO" />
+  <xs:complexType name="PaymentTypeDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentTypeDAO" nillable="true" type="tns:PaymentTypeDAO" />
+  <xs:complexType name="ArrayOfPhoneDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PhoneDAO" nillable="true" type="tns:PhoneDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhoneDAO" nillable="true" type="tns:ArrayOfPhoneDAO" />
+  <xs:complexType name="ArrayOfPizzaDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PizzaDAO" nillable="true" type="tns:PizzaDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPizzaDAO" nillable="true" type="tns:ArrayOfPizzaDAO" />
+  <xs:complexType name="ArrayOfPizzaOrderDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PizzaOrderDAO" nillable="true" type="tns:PizzaOrderDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPizzaOrderDAO" nillable="true" type="tns:ArrayOfPizzaOrderDAO" />
+  <xs:complexType name="PizzaOrderDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:CustomerDAO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Payment" nillable="true" type="tns:PaymentTypeDAO" />
+      <xs:element minOccurs="0" name="Store" nillable="true" type="tns:StoreDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PizzaOrderDAO" nillable="true" type="tns:PizzaOrderDAO" />
+  <xs:complexType name="StoreDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:AddressDetailDAO" />
+      <xs:element minOccurs="0" name="Hours" nillable="true" type="tns:StoreHourDAO" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="tns:PhoneDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreDAO" nillable="true" type="tns:StoreDAO" />
+  <xs:complexType name="StoreHourDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ClosingTime" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="OpeningTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreHourDAO" nillable="true" type="tns:StoreHourDAO" />
+  <xs:complexType name="ArrayOfPizzaOrderDetailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PizzaOrderDetailDAO" nillable="true" type="tns:PizzaOrderDetailDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPizzaOrderDetailDAO" nillable="true" type="tns:ArrayOfPizzaOrderDetailDAO" />
+  <xs:complexType name="PizzaOrderDetailDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Order" nillable="true" type="tns:PizzaOrderDAO" />
+      <xs:element minOccurs="0" name="Pizza" nillable="true" type="tns:PizzaDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PizzaOrderDetailDAO" nillable="true" type="tns:PizzaOrderDetailDAO" />
+  <xs:complexType name="ArrayOfSauceDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SauceDAO" nillable="true" type="tns:SauceDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSauceDAO" nillable="true" type="tns:ArrayOfSauceDAO" />
+  <xs:complexType name="ArrayOfSizeDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SizeDAO" nillable="true" type="tns:SizeDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSizeDAO" nillable="true" type="tns:ArrayOfSizeDAO" />
+  <xs:complexType name="ArrayOfStoreDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoreDAO" nillable="true" type="tns:StoreDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoreDAO" nillable="true" type="tns:ArrayOfStoreDAO" />
+  <xs:complexType name="ArrayOfStoreHourDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoreHourDAO" nillable="true" type="tns:StoreHourDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoreHourDAO" nillable="true" type="tns:ArrayOfStoreHourDAO" />
+  <xs:complexType name="ArrayOfVegetableDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VegetableDAO" nillable="true" type="tns:VegetableDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVegetableDAO" nillable="true" type="tns:ArrayOfVegetableDAO" />
+  <xs:complexType name="VegetableDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VegetableDAO" nillable="true" type="tns:VegetableDAO" />
+  <xs:complexType name="ArrayOfVegetableToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VegetableToppingDAO" nillable="true" type="tns:VegetableToppingDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVegetableToppingDAO" nillable="true" type="tns:ArrayOfVegetableToppingDAO" />
+  <xs:complexType name="VegetableToppingDAO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pizza" nillable="true" type="tns:PizzaDAO" />
+      <xs:element minOccurs="0" name="Vegetable" nillable="true" type="tns:VegetableDAO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VegetableToppingDAO" nillable="true" type="tns:VegetableToppingDAO" />
+</xs:schema>

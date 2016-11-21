@@ -1,0 +1,23 @@
+﻿@model PizzaStoreLogic.WebClient.Models.CustomerModel
+
+@if (Model.Customer.Id == 0)
+{
+    <div class="navbar-right">
+        @Html.ActionLink("Login", "FullLog", "Customer",
+         new { returnUrl = Request.Url.PathAndQuery },
+         new { @class = "btn btn-default navbar-btn" })
+    </div>
+}
+else
+{
+    <div class="navbar-right">
+        @Html.ActionLink("Logout", "LogOut", "Customer",
+         new { returnUrl = Request.Url.PathAndQuery },
+         new { @class = "btn btn-default navbar-btn" })
+    </div>
+    <div class="navbar-text navbar-right">
+        <b>Current User:</b>
+        @{string fullName = Model.Customer.Name.LastName + ", " + Model.Customer.Name.FirstName;}
+        @fullName
+    </div>
+}

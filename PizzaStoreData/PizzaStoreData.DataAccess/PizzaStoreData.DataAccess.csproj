@@ -133,7 +133,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="PizzaStoreModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -142,6 +144,9 @@
     <None Include="PizzaStoreModel.edmx.diagram">
       <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="PizzaStoreModel.Context.tt">
@@ -154,9 +159,6 @@
       <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
       <LastGenOutput>PizzaStoreModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

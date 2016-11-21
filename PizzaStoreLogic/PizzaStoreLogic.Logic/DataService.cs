@@ -684,46 +684,110 @@ namespace PizzaStoreLogic.Logic
             return pssc.InsertStore(StoreMapper.MapToDAO(item));
         }
 
-        public bool InsertVeInsertable(VegetableDTO item)
+        public bool InsertVegetable(VegetableDTO item)
         {
             return pssc.InsertVegetable(VegetableMapper.MapToDAO(item));
         }
 
-        public bool InsertVeInsertableTopping(VegetableToppingDTO item)
+        public bool InsertVegetableTopping(VegetableToppingDTO item)
         {
             return pssc.InsertVegetableTopping(VegetableToppingMapper.MapToDAO(item));
         }
         #endregion
 
         #region Extra Functions
-        public Decimal GetTotal(int id)
+        public Decimal GetPrice(SizeDTO size)
+        {
+            if (size.Name.ToLower() == "personal")
+            {
+                return 4.00m;
+            }
+            else if (size.Name.ToLower() == "small")
+            {
+                return 6.00m;
+            }
+            else if (size.Name.ToLower() == "medium")
+            {
+                return 8.00m;
+            }
+            else if (size.Name.ToLower() == "large")
+            {
+                return 10.00m;
+            }
+
+            return 0m;
+        }
+
+        public Decimal GetTotal(OrderDTO order)
         {
             Decimal currentTotal = 0.00m;
 
             foreach (var item in GetOrderDetails())
             {
-                if(item.Order.Id == id)
+                if(item.Order.Id == order.Id)
                 {
-                    if (item.Pizza.Size.Name.ToLower() == "personal")
-                    {
-                        currentTotal += 4.00m;
-                    }
-                    else if (item.Pizza.Size.Name.ToLower() == "small")
-                    {
-                        currentTotal += 6.00m;
-                    }
-                    else if (item.Pizza.Size.Name.ToLower() == "medium")
-                    {
-                        currentTotal += 8.00m;
-                    }
-                    else if (item.Pizza.Size.Name.ToLower() == "large")
-                    {
-                        currentTotal += 10.00m;
-                    }
+                    currentTotal += GetPrice(item.Pizza.Size) * item.Pizza.Quantity;
                 }
             }
 
             return currentTotal;
+        }
+
+        public bool CreatePizza(SizeDTO size, CrustDTO crust, SauceDTO sauce, CheeseDTO cheese, List<CheeseDTO> cheeses, List<MeatDTO> meats, List<VegetableDTO> vegetables, int quantity)
+        {
+            PizzaDTO pizza = new PizzaDTO { Size = size, Crust = crust, Sauce = sauce, Cheese = cheese, Quantity = quantity, Active = true };
+
+            if (InsertPizza(pizza))
+            {
+                pizza = GetPizzas().Last();
+                if (cheeses != null)
+                {
+                    foreach (var item in cheeses)
+                    {
+                        CheeseToppingDTO ct = new CheeseToppingDTO { Cheese = item, Pizza = pizza };
+                        if (InsertCheeseTopping(ct))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                if (meats != null)
+                {
+                    foreach (var item in meats)
+                    {
+                        MeatToppingDTO mt = new MeatToppingDTO { Meat = item, Pizza = pizza };
+                        if (InsertMeatTopping(mt))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                if (vegetables != null)
+                {
+                    foreach (var item in vegetables)
+                    {
+                        VegetableToppingDTO vt = new VegetableToppingDTO { Vegetable = item, Pizza = pizza };
+                        if (InsertVegetableTopping(vt))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
         #endregion
     }

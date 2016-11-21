@@ -22,7 +22,7 @@ namespace PizzaStoreLogic.Logic.Mappers
 
         public static VegetableDTO MapToDTO(VegetableDAO vegetable)
         {
-            var v = new VegetableDAO();
+            var v = new VegetableDTO();
             v.Id = vegetable.Id;
             v.Name = vegetable.Name;
             v.Active = vegetable.Active;
