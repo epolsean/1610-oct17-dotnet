@@ -2,7 +2,7 @@
 @model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
 
 @{ 
-    ViewBag.Title = "Pizza Store - Checkout";
+    ViewBag.Title = "Pizza Rocket - Checkout";
     string fullName = Model.Order.Customer.Name.LastName + ", " + Model.Order.Customer.Name.FirstName;
     string address = Model.Order.Customer.Address.Address1 + ", " + (Model.Order.Customer.Address.Address2 + ", " ?? "") + Model.Order.Customer.Address.City + ", " + Model.Order.Customer.Address.State + " " + Model.Order.Customer.Address.Zipcode;
     decimal total = 0m;

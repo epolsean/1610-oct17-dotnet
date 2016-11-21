@@ -63,7 +63,7 @@ values ('5553452689', 1), ('5558450923', 1), ('5550892341', 1), ('5553234894', 1
 go
 
 insert into PizzaStore.AddressDetails(Address1, Address2, CityName, StateName, Zipcode, Active)
-values ('2320 Dulles Station Blvd.', 'Apt # 1432', 'Herndon', 'Virginia', 20171, 1), ('1337 Salt Road', null, 'Reston', 'Virginia', 20190, 1), ('533 Sharp Drive', 'Ste # 16', 'Fairfax', 'Virginia', 20151, 1), ('132 Itaily Court', null, 'Herndon', 'Virginia', 20171, 1), ('745 Chicago Avenue', null, 'Fairfax', 'Virginia', 20151, 1);
+values ('2320 Dulles Station Blvd.', 'Apt # 1432', 'Herndon', 'Virginia', 20171, 1), ('1337 Salt Road', null, 'Reston', 'Virginia', 20190, 1), ('533 Sharp Drive', 'Ste # 16', 'Fairfax', 'Virginia', 20151, 1), ('132 Italy Court', null, 'Herndon', 'Virginia', 20171, 1), ('745 Chicago Avenue', null, 'Fairfax', 'Virginia', 20151, 1);
 go
 
 insert into PizzaStore.Customer(NameID, AddressID, EmailID, PhoneID, Active)

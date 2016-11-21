@@ -51,6 +51,15 @@ namespace PizzaStoreLogic.WebClient.Controllers
             });
         }
 
+        public ViewResult PastOrders(OrderDTO order, string returnUrl)
+        {
+            return View(new OrderIndexViewModel
+            {
+                ReturnUrl = returnUrl,
+                Order = order
+            });
+        }
+
         public RedirectToRouteResult CreateOrder(OrderDTO order, string returnUrl, int store, int paymentOption)
         {
             if (store != 0 && paymentOption != 0)
@@ -73,7 +82,7 @@ namespace PizzaStoreLogic.WebClient.Controllers
 
         public RedirectToRouteResult AddToOrder(OrderDTO order, string returnUrl, int size, int crust, int sauce, int cheese, int[] cheeses, int[] meats, int[] veggies, string quantity)
         {
-            if (size != 0 && crust != 0 && sauce != 0 && cheese != 0)
+            if (size != 0 && crust != 0 && sauce != 0 && cheese != 0 && quantity != null)
             {
                 SizeDTO Size = data.GetSize(size);
                 CrustDTO Crust = data.GetCrust(crust);

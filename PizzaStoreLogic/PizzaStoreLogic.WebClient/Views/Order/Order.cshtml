@@ -2,7 +2,7 @@
 @model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
 
 @{ 
-    ViewBag.Title = "Pizza Store - Order";
+    ViewBag.Title = "Pizza Rocket - Order";
 }
 
 <h2>Your Order</h2>
@@ -52,6 +52,10 @@
                                 toppings += (item.Vegetable.Name + "/");
                             }
                         }
+                        @if(toppings.Last() == '/')
+                        {
+                            toppings = toppings.Remove(toppings.LastIndexOf('/'));
+                        }
                         @toppings
                     </td>
                     <td class="text-center">@orderDetail.Pizza.Quantity</td>
@@ -60,12 +64,13 @@
                         @price.ToString("c")
                     </td>
                     <td class="text-right">@((orderDetail.Pizza.Quantity * price).ToString("c"))</td>
+                    <!--
                     <td>
-                        @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                        using (Html.BeginForm("RemoveFromCart", "Cart"))
                         {
                             <input class="btn btn-sm btn-warning" type="submit" value="Remove" />
                         }
-                    </td>
+                    </td>-->
                 </tr>
             }
         }
@@ -84,6 +89,6 @@
 <div class="text-center">
     @using (Html.BeginForm("CheckOut", "Order"))
     {
-        <button class="btn btn-success" value="Sign Up">Check Out</button>
+        <button class="btn btn-success" value="Check Out">Check Out</button>
     }
 </div>

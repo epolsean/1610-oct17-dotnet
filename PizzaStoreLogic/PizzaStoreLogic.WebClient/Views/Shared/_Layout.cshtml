@@ -10,16 +10,20 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <a class="navbar-brand" href="#">PIZZA STORE</a>
+        <a class="navbar-brand" href="#">PIZZA ROCKET</a>
         @Html.Action("Log", "Customer")
     </div>
 
-    <div class="row panel">
-        <div class="col-md-9">
-            @RenderBody()
-        </div>
-        <div class="col-md-3">
-            @Html.Action("Pizza", "Pizza")
+    <div class="container fill">
+        <div id="map" class="row panel">
+            <div class="col-md-9">
+                <div class="well">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="col-md-3">
+                @Html.Action("Pizza", "Pizza")
+            </div>
         </div>
     </div>
 
