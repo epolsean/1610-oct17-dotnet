@@ -120,6 +120,7 @@
     <Content Include="Properties\DataSources\PizzaStoreLogic.Logic.PizzaStoreDataService.StoreHourDAO.datasource" />
     <Content Include="Properties\DataSources\PizzaStoreLogic.Logic.PizzaStoreDataService.VegetableDAO.datasource" />
     <Content Include="Properties\DataSources\PizzaStoreLogic.Logic.PizzaStoreDataService.VegetableToppingDAO.datasource" />
+    <None Include="Properties\PublishProfiles\PizzaRocket.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
