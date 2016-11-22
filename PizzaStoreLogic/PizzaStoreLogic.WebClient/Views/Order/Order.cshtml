@@ -1,0 +1,94 @@
+﻿@using PizzaStoreLogic.Logic;
+@model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
+
+@{ 
+    ViewBag.Title = "Pizza Rocket - Order";
+}
+
+<h2>Your Order</h2>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Size</th>
+            <th>Crust</th>
+            <th>Sauce</th>
+            <th>Cheese</th>
+            <th colspan="4">Toppings</th>
+            <th>Quantity</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var orderDetail in new DataService().GetOrderDetails())
+        {
+            if (orderDetail.Order.Id == Model.Order.Id)
+            {
+                <tr>
+                    <td class="text-left">@orderDetail.Pizza.Size.Name</td>
+                    <td class="text-left">@orderDetail.Pizza.Crust.Name</td>
+                    <td class="text-left">@orderDetail.Pizza.Sauce.Name</td>
+                    <td class="text-left">@orderDetail.Pizza.Cheese.Name</td>
+                    <td colspan="4" class="text-left">
+                        @{string toppings = ""; }
+                        @foreach (var item in new DataService().GetCheeseToppings())
+                        {
+                            if (orderDetail.Pizza.Id == item.Pizza.Id && item.Cheese.Id != orderDetail.Pizza.Cheese.Id)
+                            {
+                                toppings += (item.Cheese.Name + "/");
+                            }
+                        }
+                        @foreach (var item in new DataService().GetMeatToppings())
+                        {
+                            if (orderDetail.Pizza.Id == item.Pizza.Id)
+                            {
+                                toppings += (item.Meat.Name + "/");
+                            }
+                        }
+                        @foreach (var item in new DataService().GetVegetableToppings())
+                        {
+                            if (orderDetail.Pizza.Id == item.Pizza.Id)
+                            {
+                                toppings += (item.Vegetable.Name + "/");
+                            }
+                        }
+                        @if(toppings.Last() == '/')
+                        {
+                            toppings = toppings.Remove(toppings.LastIndexOf('/'));
+                        }
+                        @toppings
+                    </td>
+                    <td class="text-center">@orderDetail.Pizza.Quantity</td>
+                    <td class="text-right">
+                        @{decimal price = new DataService().GetPrice(orderDetail.Pizza.Size);}
+                        @price.ToString("c")
+                    </td>
+                    <td class="text-right">@((orderDetail.Pizza.Quantity * price).ToString("c"))</td>
+                    <!--
+                    <td>
+                        using (Html.BeginForm("RemoveFromCart", "Cart"))
+                        {
+                            <input class="btn btn-sm btn-warning" type="submit" value="Remove" />
+                        }
+                    </td>-->
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="10" class="text-right">Total:</td>
+            <td class="text-right">
+                @{decimal total = new DataService().GetTotal(Model.Order);}
+                @total.ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    @using (Html.BeginForm("CheckOut", "Order"))
+    {
+        <button class="btn btn-success" value="Check Out">Check Out</button>
+    }
+</div>

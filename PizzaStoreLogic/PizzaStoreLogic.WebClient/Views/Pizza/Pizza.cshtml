@@ -1,0 +1,147 @@
+﻿@using PizzaStoreLogic.Logic;
+@model PizzaStoreLogic.WebClient.Models.NewPizzaModel
+
+@{
+    ViewBag.Title = "Pizza";
+    PizzaStoreLogic.Logic.Models.OrderDTO order = (PizzaStoreLogic.Logic.Models.OrderDTO)Session["Order"];
+    string disableString = "";
+    string buttonStatus = "btn-success";
+    if (order != null)
+    {
+        if (order.Id != 0)
+        {
+            disableString = "";
+            buttonStatus = "btn-success";
+        }
+        else
+        {
+            disableString = "disabled";
+            buttonStatus = "btn-danger";
+        }
+    }
+    else
+    {
+        disableString = "disabled";
+        buttonStatus = "btn-danger";
+
+    }
+}
+<div>
+    <h2>Pizza Builder</h2>
+</div>
+<hr />
+
+@using (Html.BeginForm("AddToOrder", "Order"))
+{
+    <fieldset @disableString>
+    <div>
+        <select class="form-control" name="size">
+            <option value=0>Select a size</option>
+            @foreach (var item in Model.Sizes)
+        {
+                <option value="@item.Id">@item.Name</option>
+        }
+        </select>
+        <select class="form-control" name="crust">
+            <option value=0>Select a crust</option>
+            @foreach (var item in Model.Crusts)
+        {
+                <option value="@item.Id">@item.Name</option>
+        }
+        </select>
+        <select class="form-control" name="sauce">
+            <option value=0>Select a sauce</option>
+            @foreach (var item in Model.Sauces)
+        {
+                <option value="@item.Id">@item.Name</option>
+        }
+        </select>
+        <select class="form-control" name="cheese">
+            <option value=0>Select a cheese</option>
+            @foreach (var item in Model.Cheeses)
+        {
+                <option value="@item.Id">@item.Name</option>
+        }
+        </select>
+        <hr />
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                <div role="tab" class="panel-heading" id="headingOne">
+                    <h4 class="panel-title">
+                        Cheese Toppings
+                    </h4>
+                </div>
+            </a>
+            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                    @foreach (var item in Model.Cheeses)
+                    {
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="@item.Id" name="cheeses" />
+                                @item.Name
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="panel panel-default">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        Meat Toppings
+                    </h4>
+                </div>
+            </a>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                    @foreach (var item in Model.Meats)
+                    {
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="@item.Id" name="meats" />
+                                @item.Name
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="panel panel-default">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        Vegetables Toppings
+                    </h4>
+                </div>
+            </a>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    @foreach (var item in Model.Vegetables)
+                    {
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="@item.Id" name="veggies" />
+                                @item.Name
+                            </label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group">
+        <input type="text" class="form-control" name="Quantity" placeholder="Quantity" />
+    </div>
+    <div class="pull-right">
+        <input type="submit" class="btn @buttonStatus" value="Add to order" />
+    </div>
+    </fieldset>
+}
+

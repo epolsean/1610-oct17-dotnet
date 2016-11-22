@@ -1,0 +1,25 @@
+﻿
+@model PizzaStoreLogic.WebClient.Models.CustomerModel
+
+@{ 
+    ViewBag.Title = "Pizza Rocket - Login";
+}
+
+@using (Html.BeginForm("CompleteLog", "Customer"))
+{
+    <select class="form-control" name="selectedLog">
+        <option value=0>Select a Customer</option>
+        @foreach (var item in Model.Customers)
+        {
+            string fullName = item.Name.LastName + ", " + item.Name.FirstName;
+            <option value="@item.Id">@fullName</option>
+        }
+    </select>
+    <div>
+        <button class="btn btn-success" value="Log In">Login</button>
+        @Html.ActionLink("Sign Up", "SignUp", "Customer",
+                new { returnUrl = Request.Url.PathAndQuery },
+                new { @class = "btn btn-success" })
+    </div>
+}
+

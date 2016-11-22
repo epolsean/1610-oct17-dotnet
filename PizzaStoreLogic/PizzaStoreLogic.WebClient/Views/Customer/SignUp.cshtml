@@ -1,0 +1,46 @@
+﻿@model PizzaStoreLogic.WebClient.Models.CustomerModel
+
+@{ 
+    ViewBag.Title = "Pizza Rocket - Create Account";
+}
+
+@using (Html.BeginForm("Register", "Customer"))
+{
+    <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" class="form-control" name="firstName" />
+    </div>
+    <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" class="form-control" name="lastName" />
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" class="form-control" name="email" inputmode="email" />
+    </div>
+    <div class="form-group">
+        <label>Phone:</label>
+        <input type="text" class="form-control" name="phone"  />
+    </div>
+    <div class="form-group">
+        <label>Address 1:</label>
+        <input type="text" class="form-control" name="address1" />
+    </div>
+    <div class="form-group">
+        <label>Address 2:</label>
+        <input type="text" class="form-control" name="address2" />
+    </div>
+    <div class="form-group">
+        <label>City:</label>
+        <input type="text" class="form-control" name="city" />
+    </div>
+    <div class="form-group">
+        <label>State:</label>
+        <input type="text" class="form-control" name="state" />
+    </div>
+    <div class="form-group">
+        <label>Zipcode:</label>
+        <input type="text" class="form-control" name="zipcode" />
+    </div>
+    <input type="submit" class="btn btn-success" value="Create Account" />
+}

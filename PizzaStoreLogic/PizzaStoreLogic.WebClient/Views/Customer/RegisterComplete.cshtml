@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Pizza Rocket - Registered";
+}
+
+<h1>Congratulations!</h1>
+<h4>You have successfully created an account</h4>
+<div>
+    @Html.ActionLink("Home", "Home", "Pizza",
+            new { returnUrl = Request.Url.PathAndQuery },
+            new { @class = "btn btn-success" })
+    @Html.ActionLink("Add Card", "", "",
+            new { returnUrl = Request.Url.PathAndQuery },
+            new { @class = "btn btn-success disabled" })
+</div>

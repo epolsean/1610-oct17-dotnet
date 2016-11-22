@@ -1,0 +1,13 @@
+﻿@using PizzaStoreLogic.Logic
+@model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
+
+@{
+    ViewBag.Title = "Pizza Rocket - Confirmation";
+}
+
+<h1>Order Confirmed</h1>
+<h4>Your order has been submited and we're working as fast as we can to deliver this yummy pizza!</h4>
+@using (Html.BeginForm("Home", "Pizza"))
+{
+    <button class="btn btn-success" value="Home">Home</button>
+}

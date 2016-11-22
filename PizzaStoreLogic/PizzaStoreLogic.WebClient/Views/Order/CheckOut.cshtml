@@ -1,0 +1,58 @@
+﻿@using PizzaStoreLogic.Logic
+@model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
+
+@{ 
+    ViewBag.Title = "Pizza Rocket - Checkout";
+    string fullName = Model.Order.Customer.Name.LastName + ", " + Model.Order.Customer.Name.FirstName;
+    string address = Model.Order.Customer.Address.Address1 + ", " + (Model.Order.Customer.Address.Address2 + ", " ?? "") + Model.Order.Customer.Address.City + ", " + Model.Order.Customer.Address.State + " " + Model.Order.Customer.Address.Zipcode;
+    decimal total = 0m;
+    DataService data = new DataService();
+    foreach (var item in data.GetOrderDetails())
+    {
+        if (Model.Order.Id == item.Order.Id)
+        {
+            total = data.GetTotal(item.Order);
+        }
+    }
+}
+
+<h1>Confirmation</h1>
+<h4>Does everything look correct?</h4>
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Information</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-left">Name:</td>
+            <td class="text-left">@fullName</td>
+        </tr>
+        <tr>
+            <td class="text-left">Email:</td>
+            <td class="text-left">@Model.Order.Customer.Email.Address</td>
+        </tr>
+        <tr>
+            <td class="text-left">Phone:</td>
+            <td class="text-left">@String.Format("{0:(###) ###-####}", Model.Order.Customer.Phone.Number)</td>
+        </tr>
+        <tr>
+            <td class="text-left">Address:</td>
+            <td class="text-left">@address</td>
+        </tr>
+        <tr>
+            <td class="text-left">Payment Type:</td>
+            <td class="text-left">@Model.Order.Payment.Type</td>
+        </tr>
+        <tr>
+            <td class="text-left">Grand Total:</td>
+            <td class="text-left">@total</td>
+        </tr>
+    </tbody>
+</table>
+@using (Html.BeginForm("Confirm", "Order"))
+{
+    <button class="btn btn-success" value="Confirm">Confirm</button>
+}

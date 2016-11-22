@@ -1,0 +1,109 @@
+﻿@using PizzaStoreLogic.Logic
+@model PizzaStoreLogic.WebClient.Models.OrderIndexViewModel
+@{ 
+    ViewBag.Title = "Pizza Rocket - Past Orders";
+    var unitsMap = new[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "nineteen" };
+    int index = 1;
+    DataService data = new DataService();
+    PizzaStoreLogic.Logic.Models.CustomerDTO customer = (PizzaStoreLogic.Logic.Models.CustomerDTO)Session["Customer"];
+    string collapseTab = "#collapse";
+    string collapseName = "collapse";
+    string headingName = "heading2";
+}
+
+<h1>Past Orders</h1>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <hr />
+    @foreach (var orderDetail in data.GetOrderDetails())
+    {
+        if (orderDetail.Order.Customer.Id == customer.Id)
+        {
+            {
+                collapseTab = "#collapse2" + unitsMap[index];
+                collapseName = "collapse2" + unitsMap[index];
+                headingName = "heading2" + unitsMap[index];
+            }
+            <div class="panel panel-default">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="@collapseTab" aria-expanded="false" aria-controls="@collapseName">
+                    <div role="tab" class="panel-heading" id="@headingName">
+                        <h4 class="panel-title">
+                            Order @unitsMap[index]
+                        </h4>
+                    </div>
+                </a>
+                <div id="@collapseName" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@headingName">
+                    <div class="panel-body">
+                        <div class="checkbox">
+                            <table id="cartTable" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Size</th>
+                                        <th>Crust</th>
+                                        <th>Sauce</th>
+                                        <th>Cheese</th>
+                                        <th colspan="4">Toppings</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-left">@orderDetail.Pizza.Size.Name</td>
+                                        <td class="text-left">@orderDetail.Pizza.Crust.Name</td>
+                                        <td class="text-left">@orderDetail.Pizza.Sauce.Name</td>
+                                        <td class="text-left">@orderDetail.Pizza.Cheese.Name</td>
+                                        <td colspan="4" class="text-left">
+                                            @{string toppings = ""; }
+                                            @foreach (var item in new DataService().GetCheeseToppings())
+                                            {
+                                                if (orderDetail.Pizza.Id == item.Pizza.Id && item.Cheese.Id != orderDetail.Pizza.Cheese.Id)
+                                                {
+                                                    toppings += (item.Cheese.Name + "/");
+                                                }
+                                            }
+                                            @foreach (var item in new DataService().GetMeatToppings())
+                                            {
+                                                if (orderDetail.Pizza.Id == item.Pizza.Id)
+                                                {
+                                                    toppings += (item.Meat.Name + "/");
+                                                }
+                                            }
+                                            @foreach (var item in new DataService().GetVegetableToppings())
+                                            {
+                                                if (orderDetail.Pizza.Id == item.Pizza.Id)
+                                                {
+                                                    toppings += (item.Vegetable.Name + "/");
+                                                }
+                                            }
+                                            @if(toppings.Last() == '/')
+                                            {
+                                                toppings = toppings.Remove(toppings.LastIndexOf('/'));
+                                            }
+                                            @toppings
+                                        </td>
+                                        <td class="text-center">@orderDetail.Pizza.Quantity</td>
+                                        <td class="text-right">
+                                            @{decimal price = new DataService().GetPrice(orderDetail.Pizza.Size);}
+                                            @price.ToString("c")
+                                        </td>
+                                        <td class="text-right">@((orderDetail.Pizza.Quantity * price).ToString("c"))</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            index++;
+        }
+    }
+</div>
+
+<div>
+    @using (Html.BeginForm("Home", "Pizza"))
+    {
+        <button class="btn btn-success" value="Home">Home</button>
+    }
+</div>
+

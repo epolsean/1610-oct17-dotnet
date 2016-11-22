@@ -1,0 +1,2015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PizzaStoreService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/pizzastoredataservice/PizzaStoreService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/pizzastoredataservice/PizzaStoreService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/pizzastoredataservice/PizzaStoreService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataClient.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPizzaStoreService_GetAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCardPayments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardPayments" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCardPayments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardPaymentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeses" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheesesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeseToppings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeseToppings" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeseToppings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeseToppingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCrusts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrusts" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCrusts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrustsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmails" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeats_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeats" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeatToppings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatToppings" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeatToppings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatToppingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNames" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPaymentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPaymentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPhones_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhones" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPhones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzas" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrders" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrderDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrderDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrderDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSauces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSauces" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSauces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSaucesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSizes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizes" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSizes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStores_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStores" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStoreHours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreHours" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStoreHours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetables_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetables" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetables_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetableToppings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetableToppings" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetableToppings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetableToppingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheese_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheese" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheese_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeseTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeseTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCheeseTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheeseToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCrust_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrust" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCrust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeat" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeatTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetMeatTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMeatToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPaymentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentType" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPaymentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhone" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizza_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizza" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetPizzaOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPizzaOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSauce_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSauce" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSauce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSauceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSize" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStore" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStoreHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreHour" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetStoreHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStoreHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetable" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetableTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetableTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_GetVegetableTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVegetableToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCheese_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCheese" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCheese_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCheeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCheeseTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCheeseTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCheeseTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCheeseToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCrust_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCrust" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCrust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCrustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertMeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMeat" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertMeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertMeatTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMeatTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertMeatTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMeatToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertName_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertName" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPaymentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPaymentType" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPaymentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPaymentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPhone" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizza_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizza" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizzaOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizzaOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizzaOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizzaOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizzaOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizzaOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertPizzaOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPizzaOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertSauce_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSauce" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertSauce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSauceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSize" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStore" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertStoreHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStoreHour" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertStoreHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertStoreHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertVegetable_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVegetable" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertVegetable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVegetableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertVegetableTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVegetableTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_InsertVegetableTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertVegetableToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCheese_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCheese" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCheese_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCheeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCheeseTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCheeseTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCheeseTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCheeseToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCrust_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCrust" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCrust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCrustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeMeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMeat" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeMeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeMeatTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMeatTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeMeatTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMeatToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeName" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePaymentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePaymentType" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePaymentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePaymentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePhone" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizza_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizza" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizzaOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizzaOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizzaOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizzaOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizzaOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizzaOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangePizzaOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePizzaOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeSauce_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSauce" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeSauce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSauceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSize" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStore" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeStoreHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStoreHour" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeStoreHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeStoreHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeVegetable_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVegetable" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeVegetable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVegetableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeVegetableTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVegetableTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_ChangeVegetableTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeVegetableToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCardPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCardPayment" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCardPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCardPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCheese_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheese" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCheese_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheeseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCheeseTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheeseTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCheeseTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCheeseToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCrust_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCrust" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCrust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCrustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteMeat_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeat" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteMeat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteMeatTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeatTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteMeatTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMeatToppingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteName_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteName" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePaymentType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentType" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePaymentType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaymentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePhone_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhone" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePhone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizza_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizza" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizzaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizzaOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizzaOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizzaOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizzaOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizzaOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizzaOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeletePizzaOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePizzaOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteSauce_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSauce" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteSauce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSauceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSize" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteStore_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStore" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteStore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteStoreHour_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStoreHour" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteStoreHour_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStoreHourResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteVegetable_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVegetable" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteVegetable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVegetableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteVegetableTopping_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVegetableTopping" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreService_DeleteVegetableTopping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteVegetableToppingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPizzaStoreService">
+    <wsdl:operation name="GetAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetAddresses" message="tns:IPizzaStoreService_GetAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetAddressesResponse" message="tns:IPizzaStoreService_GetAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPayments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCardPayments" message="tns:IPizzaStoreService_GetCardPayments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCardPaymentsResponse" message="tns:IPizzaStoreService_GetCardPayments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeses" message="tns:IPizzaStoreService_GetCheeses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheesesResponse" message="tns:IPizzaStoreService_GetCheeses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeseToppings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeseToppings" message="tns:IPizzaStoreService_GetCheeseToppings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeseToppingsResponse" message="tns:IPizzaStoreService_GetCheeseToppings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrusts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCrusts" message="tns:IPizzaStoreService_GetCrusts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCrustsResponse" message="tns:IPizzaStoreService_GetCrusts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCustomers" message="tns:IPizzaStoreService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCustomersResponse" message="tns:IPizzaStoreService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetEmails" message="tns:IPizzaStoreService_GetEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetEmailsResponse" message="tns:IPizzaStoreService_GetEmails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeats" message="tns:IPizzaStoreService_GetMeats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatsResponse" message="tns:IPizzaStoreService_GetMeats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeatToppings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatToppings" message="tns:IPizzaStoreService_GetMeatToppings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatToppingsResponse" message="tns:IPizzaStoreService_GetMeatToppings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetNames" message="tns:IPizzaStoreService_GetNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetNamesResponse" message="tns:IPizzaStoreService_GetNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPaymentTypes" message="tns:IPizzaStoreService_GetPaymentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPaymentTypesResponse" message="tns:IPizzaStoreService_GetPaymentTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPhones" message="tns:IPizzaStoreService_GetPhones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPhonesResponse" message="tns:IPizzaStoreService_GetPhones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzas" message="tns:IPizzaStoreService_GetPizzas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzasResponse" message="tns:IPizzaStoreService_GetPizzas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrders" message="tns:IPizzaStoreService_GetPizzaOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrdersResponse" message="tns:IPizzaStoreService_GetPizzaOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrderDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetails" message="tns:IPizzaStoreService_GetPizzaOrderDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetailsResponse" message="tns:IPizzaStoreService_GetPizzaOrderDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSauces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSauces" message="tns:IPizzaStoreService_GetSauces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSaucesResponse" message="tns:IPizzaStoreService_GetSauces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSizes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSizes" message="tns:IPizzaStoreService_GetSizes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSizesResponse" message="tns:IPizzaStoreService_GetSizes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStores" message="tns:IPizzaStoreService_GetStores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoresResponse" message="tns:IPizzaStoreService_GetStores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreHours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoreHours" message="tns:IPizzaStoreService_GetStoreHours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoreHoursResponse" message="tns:IPizzaStoreService_GetStoreHours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetables">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetables" message="tns:IPizzaStoreService_GetVegetables_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetablesResponse" message="tns:IPizzaStoreService_GetVegetables_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetableToppings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetableToppings" message="tns:IPizzaStoreService_GetVegetableToppings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetableToppingsResponse" message="tns:IPizzaStoreService_GetVegetableToppings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetAddress" message="tns:IPizzaStoreService_GetAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetAddressResponse" message="tns:IPizzaStoreService_GetAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCardPayment" message="tns:IPizzaStoreService_GetCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCardPaymentResponse" message="tns:IPizzaStoreService_GetCardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheese">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheese" message="tns:IPizzaStoreService_GetCheese_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeseResponse" message="tns:IPizzaStoreService_GetCheese_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeseTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeseTopping" message="tns:IPizzaStoreService_GetCheeseTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCheeseToppingResponse" message="tns:IPizzaStoreService_GetCheeseTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCrust" message="tns:IPizzaStoreService_GetCrust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCrustResponse" message="tns:IPizzaStoreService_GetCrust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCustomer" message="tns:IPizzaStoreService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetCustomerResponse" message="tns:IPizzaStoreService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetEmail" message="tns:IPizzaStoreService_GetEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetEmailResponse" message="tns:IPizzaStoreService_GetEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeat" message="tns:IPizzaStoreService_GetMeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatResponse" message="tns:IPizzaStoreService_GetMeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeatTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatTopping" message="tns:IPizzaStoreService_GetMeatTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetMeatToppingResponse" message="tns:IPizzaStoreService_GetMeatTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetName" message="tns:IPizzaStoreService_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetNameResponse" message="tns:IPizzaStoreService_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPaymentType" message="tns:IPizzaStoreService_GetPaymentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPaymentTypeResponse" message="tns:IPizzaStoreService_GetPaymentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPhone" message="tns:IPizzaStoreService_GetPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPhoneResponse" message="tns:IPizzaStoreService_GetPhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizza" message="tns:IPizzaStoreService_GetPizza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaResponse" message="tns:IPizzaStoreService_GetPizza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrder" message="tns:IPizzaStoreService_GetPizzaOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrderResponse" message="tns:IPizzaStoreService_GetPizzaOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetail" message="tns:IPizzaStoreService_GetPizzaOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetailResponse" message="tns:IPizzaStoreService_GetPizzaOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSauce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSauce" message="tns:IPizzaStoreService_GetSauce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSauceResponse" message="tns:IPizzaStoreService_GetSauce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSize" message="tns:IPizzaStoreService_GetSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetSizeResponse" message="tns:IPizzaStoreService_GetSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStore" message="tns:IPizzaStoreService_GetStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoreResponse" message="tns:IPizzaStoreService_GetStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoreHour" message="tns:IPizzaStoreService_GetStoreHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetStoreHourResponse" message="tns:IPizzaStoreService_GetStoreHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetable" message="tns:IPizzaStoreService_GetVegetable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetableResponse" message="tns:IPizzaStoreService_GetVegetable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetableTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetableTopping" message="tns:IPizzaStoreService_GetVegetableTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/GetVegetableToppingResponse" message="tns:IPizzaStoreService_GetVegetableTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertAddress" message="tns:IPizzaStoreService_InsertAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertAddressResponse" message="tns:IPizzaStoreService_InsertAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCardPayment" message="tns:IPizzaStoreService_InsertCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCardPaymentResponse" message="tns:IPizzaStoreService_InsertCardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCheese">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCheese" message="tns:IPizzaStoreService_InsertCheese_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCheeseResponse" message="tns:IPizzaStoreService_InsertCheese_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCheeseTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCheeseTopping" message="tns:IPizzaStoreService_InsertCheeseTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCheeseToppingResponse" message="tns:IPizzaStoreService_InsertCheeseTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCrust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCrust" message="tns:IPizzaStoreService_InsertCrust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCrustResponse" message="tns:IPizzaStoreService_InsertCrust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCustomer" message="tns:IPizzaStoreService_InsertCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertCustomerResponse" message="tns:IPizzaStoreService_InsertCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertEmail" message="tns:IPizzaStoreService_InsertEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertEmailResponse" message="tns:IPizzaStoreService_InsertEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertMeat" message="tns:IPizzaStoreService_InsertMeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertMeatResponse" message="tns:IPizzaStoreService_InsertMeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMeatTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertMeatTopping" message="tns:IPizzaStoreService_InsertMeatTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertMeatToppingResponse" message="tns:IPizzaStoreService_InsertMeatTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertName" message="tns:IPizzaStoreService_InsertName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertNameResponse" message="tns:IPizzaStoreService_InsertName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPaymentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPaymentType" message="tns:IPizzaStoreService_InsertPaymentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPaymentTypeResponse" message="tns:IPizzaStoreService_InsertPaymentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPhone" message="tns:IPizzaStoreService_InsertPhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPhoneResponse" message="tns:IPizzaStoreService_InsertPhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizza" message="tns:IPizzaStoreService_InsertPizza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizzaResponse" message="tns:IPizzaStoreService_InsertPizza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizzaOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizzaOrder" message="tns:IPizzaStoreService_InsertPizzaOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizzaOrderResponse" message="tns:IPizzaStoreService_InsertPizzaOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizzaOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizzaOrderDetail" message="tns:IPizzaStoreService_InsertPizzaOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertPizzaOrderDetailResponse" message="tns:IPizzaStoreService_InsertPizzaOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSauce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertSauce" message="tns:IPizzaStoreService_InsertSauce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertSauceResponse" message="tns:IPizzaStoreService_InsertSauce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertSize" message="tns:IPizzaStoreService_InsertSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertSizeResponse" message="tns:IPizzaStoreService_InsertSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertStore" message="tns:IPizzaStoreService_InsertStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertStoreResponse" message="tns:IPizzaStoreService_InsertStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertStoreHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertStoreHour" message="tns:IPizzaStoreService_InsertStoreHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertStoreHourResponse" message="tns:IPizzaStoreService_InsertStoreHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVegetable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertVegetable" message="tns:IPizzaStoreService_InsertVegetable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertVegetableResponse" message="tns:IPizzaStoreService_InsertVegetable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertVegetableTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertVegetableTopping" message="tns:IPizzaStoreService_InsertVegetableTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/InsertVegetableToppingResponse" message="tns:IPizzaStoreService_InsertVegetableTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeAddress" message="tns:IPizzaStoreService_ChangeAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeAddressResponse" message="tns:IPizzaStoreService_ChangeAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCardPayment" message="tns:IPizzaStoreService_ChangeCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCardPaymentResponse" message="tns:IPizzaStoreService_ChangeCardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCheese">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCheese" message="tns:IPizzaStoreService_ChangeCheese_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCheeseResponse" message="tns:IPizzaStoreService_ChangeCheese_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCheeseTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCheeseTopping" message="tns:IPizzaStoreService_ChangeCheeseTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCheeseToppingResponse" message="tns:IPizzaStoreService_ChangeCheeseTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCrust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCrust" message="tns:IPizzaStoreService_ChangeCrust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCrustResponse" message="tns:IPizzaStoreService_ChangeCrust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCustomer" message="tns:IPizzaStoreService_ChangeCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeCustomerResponse" message="tns:IPizzaStoreService_ChangeCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeEmail" message="tns:IPizzaStoreService_ChangeEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeEmailResponse" message="tns:IPizzaStoreService_ChangeEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeMeat" message="tns:IPizzaStoreService_ChangeMeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeMeatResponse" message="tns:IPizzaStoreService_ChangeMeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMeatTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeMeatTopping" message="tns:IPizzaStoreService_ChangeMeatTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeMeatToppingResponse" message="tns:IPizzaStoreService_ChangeMeatTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeName" message="tns:IPizzaStoreService_ChangeName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeNameResponse" message="tns:IPizzaStoreService_ChangeName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePaymentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePaymentType" message="tns:IPizzaStoreService_ChangePaymentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePaymentTypeResponse" message="tns:IPizzaStoreService_ChangePaymentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePhone" message="tns:IPizzaStoreService_ChangePhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePhoneResponse" message="tns:IPizzaStoreService_ChangePhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizza" message="tns:IPizzaStoreService_ChangePizza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizzaResponse" message="tns:IPizzaStoreService_ChangePizza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizzaOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizzaOrder" message="tns:IPizzaStoreService_ChangePizzaOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizzaOrderResponse" message="tns:IPizzaStoreService_ChangePizzaOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizzaOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizzaOrderDetail" message="tns:IPizzaStoreService_ChangePizzaOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangePizzaOrderDetailResponse" message="tns:IPizzaStoreService_ChangePizzaOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSauce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeSauce" message="tns:IPizzaStoreService_ChangeSauce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeSauceResponse" message="tns:IPizzaStoreService_ChangeSauce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeSize" message="tns:IPizzaStoreService_ChangeSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeSizeResponse" message="tns:IPizzaStoreService_ChangeSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeStore" message="tns:IPizzaStoreService_ChangeStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeStoreResponse" message="tns:IPizzaStoreService_ChangeStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStoreHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeStoreHour" message="tns:IPizzaStoreService_ChangeStoreHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeStoreHourResponse" message="tns:IPizzaStoreService_ChangeStoreHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVegetable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeVegetable" message="tns:IPizzaStoreService_ChangeVegetable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeVegetableResponse" message="tns:IPizzaStoreService_ChangeVegetable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVegetableTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeVegetableTopping" message="tns:IPizzaStoreService_ChangeVegetableTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/ChangeVegetableToppingResponse" message="tns:IPizzaStoreService_ChangeVegetableTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteAddress" message="tns:IPizzaStoreService_DeleteAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteAddressResponse" message="tns:IPizzaStoreService_DeleteAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCardPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCardPayment" message="tns:IPizzaStoreService_DeleteCardPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCardPaymentResponse" message="tns:IPizzaStoreService_DeleteCardPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheese">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCheese" message="tns:IPizzaStoreService_DeleteCheese_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCheeseResponse" message="tns:IPizzaStoreService_DeleteCheese_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheeseTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCheeseTopping" message="tns:IPizzaStoreService_DeleteCheeseTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCheeseToppingResponse" message="tns:IPizzaStoreService_DeleteCheeseTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCrust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCrust" message="tns:IPizzaStoreService_DeleteCrust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCrustResponse" message="tns:IPizzaStoreService_DeleteCrust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCustomer" message="tns:IPizzaStoreService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteCustomerResponse" message="tns:IPizzaStoreService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteEmail" message="tns:IPizzaStoreService_DeleteEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteEmailResponse" message="tns:IPizzaStoreService_DeleteEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeat">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteMeat" message="tns:IPizzaStoreService_DeleteMeat_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteMeatResponse" message="tns:IPizzaStoreService_DeleteMeat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeatTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteMeatTopping" message="tns:IPizzaStoreService_DeleteMeatTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteMeatToppingResponse" message="tns:IPizzaStoreService_DeleteMeatTopping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteName" message="tns:IPizzaStoreService_DeleteName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteNameResponse" message="tns:IPizzaStoreService_DeleteName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePaymentType" message="tns:IPizzaStoreService_DeletePaymentType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePaymentTypeResponse" message="tns:IPizzaStoreService_DeletePaymentType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhone">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePhone" message="tns:IPizzaStoreService_DeletePhone_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePhoneResponse" message="tns:IPizzaStoreService_DeletePhone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizza" message="tns:IPizzaStoreService_DeletePizza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizzaResponse" message="tns:IPizzaStoreService_DeletePizza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizzaOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizzaOrder" message="tns:IPizzaStoreService_DeletePizzaOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizzaOrderResponse" message="tns:IPizzaStoreService_DeletePizzaOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizzaOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizzaOrderDetail" message="tns:IPizzaStoreService_DeletePizzaOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeletePizzaOrderDetailResponse" message="tns:IPizzaStoreService_DeletePizzaOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSauce">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteSauce" message="tns:IPizzaStoreService_DeleteSauce_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteSauceResponse" message="tns:IPizzaStoreService_DeleteSauce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteSize" message="tns:IPizzaStoreService_DeleteSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteSizeResponse" message="tns:IPizzaStoreService_DeleteSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteStore" message="tns:IPizzaStoreService_DeleteStore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteStoreResponse" message="tns:IPizzaStoreService_DeleteStore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStoreHour">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteStoreHour" message="tns:IPizzaStoreService_DeleteStoreHour_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteStoreHourResponse" message="tns:IPizzaStoreService_DeleteStoreHour_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVegetable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteVegetable" message="tns:IPizzaStoreService_DeleteVegetable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteVegetableResponse" message="tns:IPizzaStoreService_DeleteVegetable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVegetableTopping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteVegetableTopping" message="tns:IPizzaStoreService_DeleteVegetableTopping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreService/DeleteVegetableToppingResponse" message="tns:IPizzaStoreService_DeleteVegetableTopping_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPizzaStoreService" type="tns:IPizzaStoreService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAddresses">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPayments">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCardPayments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeses">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCheeses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeseToppings">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCheeseToppings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrusts">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCrusts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmails">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeats">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetMeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeatToppings">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetMeatToppings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNames">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentTypes">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhones">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPhones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzas">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizzas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrders">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizzaOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrderDetails">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSauces">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetSauces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSizes">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetSizes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStores">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetStores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreHours">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetStoreHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetables">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetVegetables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetableToppings">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetVegetableToppings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddress">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardPayment">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheese">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCheese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheeseTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCheeseTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrust">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCrust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeat">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetMeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeatTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetMeatTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentType">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPaymentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhone">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizza">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizzaOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPizzaOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetPizzaOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSauce">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetSauce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSize">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStore">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreHour">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetStoreHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetable">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetVegetable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVegetableTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/GetVegetableTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAddress">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardPayment">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCheese">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertCheese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCheeseTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertCheeseTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCrust">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertCrust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMeat">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertMeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMeatTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertMeatTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertName">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPaymentType">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertPaymentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPhone">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizza">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertPizza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizzaOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertPizzaOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPizzaOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertPizzaOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSauce">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertSauce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSize">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertStore">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertStoreHour">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertStoreHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVegetable">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertVegetable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertVegetableTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/InsertVegetableTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeAddress">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCardPayment">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCheese">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeCheese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCheeseTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeCheeseTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCrust">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeCrust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeEmail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMeat">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeMeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMeatTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeMeatTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeName">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePaymentType">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangePaymentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePhone">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizza">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangePizza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizzaOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangePizzaOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePizzaOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangePizzaOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSauce">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeSauce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeSize">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStore">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeStoreHour">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeStoreHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVegetable">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeVegetable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeVegetableTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/ChangeVegetableTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCardPayment">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteCardPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheese">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteCheese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCheeseTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteCheeseTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCrust">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteCrust" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeat">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteMeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMeatTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteMeatTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteName">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaymentType">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeletePaymentType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhone">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeletePhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizza">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeletePizza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizzaOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeletePizzaOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePizzaOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeletePizzaOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSauce">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteSauce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSize">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStore">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteStore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStoreHour">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteStoreHour" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVegetable">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteVegetable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteVegetableTopping">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreService/DeleteVegetableTopping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PizzaStoreService">
+    <wsdl:port name="BasicHttpBinding_IPizzaStoreService" binding="tns:BasicHttpBinding_IPizzaStoreService">
+      <soap:address location="http://localhost/pizzastoredataservice/PizzaStoreService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,71 @@
+﻿html, body{
+    background-color: #303030;
+    color: #eee;
+    height: 100%;
+    padding-bottom: 0;
+    text-decoration: none;
+}
+
+.panel{
+    background-color: #303030;
+}
+
+.well{
+    background-color: #303030;
+    border: none;
+}
+
+.form-control{
+    background-color: #404040;
+    border-color: #585858;
+    color: #eee;
+}
+
+fieldset[disabled] .form-control{
+    cursor: not-allowed;
+    background-color: #303030;
+    border-color: #404040;
+    color: #666;
+}
+
+.panel-default{
+    border-color: #585858;
+}
+
+.panel-group .panel-heading{
+    background-color: #404040;
+    border-color: #585858;
+    color: #eee;
+}
+
+fieldset[disabled] .panel-group .panel-heading{
+    cursor: not-allowed;
+    background-color: #303030;
+    border-color: #404040;
+    color: #666;
+}
+
+.panel-title{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    display: block;
+    margin-bottom: 0;
+}
+
+.fill {
+    min-height: 100%;
+    height: 100%;
+}
+.col-md-3 {
+    min-height: 100%;
+    border-left:solid
+}

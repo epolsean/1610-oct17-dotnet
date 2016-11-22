@@ -1,0 +1,8 @@
+﻿@model PizzaStoreMVC.Client.Models.PizzaModel
+
+@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(m => m.Sauce, Model.Option)
+
+    <button type="submit">Submit</button>
+}

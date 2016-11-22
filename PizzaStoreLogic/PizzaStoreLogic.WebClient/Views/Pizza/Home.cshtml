@@ -1,0 +1,38 @@
+﻿@using m = PizzaStoreLogic.Logic.Models
+@{
+    ViewBag.Title = "Pizza Rocket";
+    m.CustomerDTO customer = (m.CustomerDTO)Session["Customer"];
+}
+
+@if (customer != null)
+{
+    if (customer.Id > 0)
+    {
+        <h1>Start New Order</h1>
+        <div>
+            @Html.ActionLink("Let's Begin!", "StartOrder", "Order",
+                  new { returnUrl = Request.Url.PathAndQuery },
+                  new { @class = "btn btn-success" })
+        </div>
+        <h1>View Past Orders</h1>
+        <div>
+            @Html.ActionLink("View Orders", "PastOrders", "Order",
+                  new { returnUrl = Request.Url.PathAndQuery },
+                  new { @class = "btn btn-success" })
+        </div>
+    }
+    else
+    {
+        <h1>Start New Order</h1>
+        <h4>You need to log in before ordering.</h4>
+        <h1>View Past Orders</h1>
+        <h4>You need to log in before viewing past orders.</h4>
+    }
+}
+else
+{
+    <h1>Start New Order</h1>
+    <h4>You need to log in before ordering.</h4>
+    <h1>View Past Orders</h1>
+    <h4>You need to log in before viewing past orders.</h4>
+}

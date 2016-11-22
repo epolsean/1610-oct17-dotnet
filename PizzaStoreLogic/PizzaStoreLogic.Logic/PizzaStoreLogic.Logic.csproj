@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E794A830-3D9E-408C-B5B7-200A38F37109}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PizzaStoreLogic.Logic</RootNamespace>
+    <AssemblyName>PizzaStoreLogic.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataService.cs" />
+    <Compile Include="Mappers\AddressMapper.cs" />
+    <Compile Include="Mappers\CardPaymentMapper.cs" />
+    <Compile Include="Mappers\CheeseMapper.cs" />
+    <Compile Include="Mappers\CheeseToppingMapper.cs" />
+    <Compile Include="Mappers\CrustMapper.cs" />
+    <Compile Include="Mappers\CustomerMapper.cs" />
+    <Compile Include="Mappers\EmailMapper.cs" />
+    <Compile Include="Mappers\HoursMapper.cs" />
+    <Compile Include="Mappers\MeatMapper.cs" />
+    <Compile Include="Mappers\MeatToppingMapper.cs" />
+    <Compile Include="Mappers\NameMapper.cs" />
+    <Compile Include="Mappers\OrderDetailMapper.cs" />
+    <Compile Include="Mappers\OrderMapper.cs" />
+    <Compile Include="Mappers\PaymentTypeMapper.cs" />
+    <Compile Include="Mappers\PhoneMapper.cs" />
+    <Compile Include="Mappers\PizzaMapper.cs" />
+    <Compile Include="Mappers\SauceMapper.cs" />
+    <Compile Include="Mappers\SizeMapper.cs" />
+    <Compile Include="Mappers\StoreMapper.cs" />
+    <Compile Include="Mappers\VegetableMapper.cs" />
+    <Compile Include="Mappers\VegetableToppingMapper.cs" />
+    <Compile Include="Models\AddressDTO.cs" />
+    <Compile Include="Models\CardPaymentDTO.cs" />
+    <Compile Include="Models\CheeseDTO.cs" />
+    <Compile Include="Models\CheeseToppingDTO.cs" />
+    <Compile Include="Models\CrustDTO.cs" />
+    <Compile Include="Models\CustomerDTO.cs" />
+    <Compile Include="Models\EmailDTO.cs" />
+    <Compile Include="Models\HoursDTO.cs" />
+    <Compile Include="Models\MeatDTO.cs" />
+    <Compile Include="Models\MeatToppingDTO.cs" />
+    <Compile Include="Models\NameDTO.cs" />
+    <Compile Include="Models\OrderDetailsDTO.cs" />
+    <Compile Include="Models\OrderDTO.cs" />
+    <Compile Include="Models\PaymentTypeDTO.cs" />
+    <Compile Include="Models\PhoneDTO.cs" />
+    <Compile Include="Models\PizzaDTO.cs" />
+    <Compile Include="Models\SauceDTO.cs" />
+    <Compile Include="Models\SizeDTO.cs" />
+    <Compile Include="Models\StoreDTO.cs" />
+    <Compile Include="Models\VegetableDTO.cs" />
+    <Compile Include="Models\VegetableToppingDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PizzaStoreDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.AddressDetailDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.CardPaymentDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.CheeseDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.CheeseToppingDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.CrustDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.CustomerDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.EmailDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.MeatDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.MeatToppingDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.NameDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.PaymentTypeDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.PhoneDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.PizzaDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.PizzaOrderDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.PizzaOrderDetailDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.SauceDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.SizeDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.StoreDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.StoreHourDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.VegetableDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreLogic.Logic.PizzaStoreDataService.VegetableToppingDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreService.wsdl" />
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PizzaStoreDataService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PizzaStoreDataService\PizzaStoreService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PizzaStoreDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PizzaStoreDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PizzaStoreDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
